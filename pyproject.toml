@@ -1,0 +1,70 @@
+# this_file: pyproject.toml
+[build-system]
+requires = ["hatchling>=1.27", "hatch-vcs>=0.4"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fontlab-fontport"
+dynamic = ["version"]
+description = "FontParts and UFO library interoperability for FontLab"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+dependencies = [
+    "defcon>=0.12,<1",
+    "fontlab-python-pens>=1.0.0",
+    "fontParts>=1.1.1,<1.2",
+    "fontPens>=0.2.4",
+    "fontTools>=4.59",
+    "ufoLib2>=0.18",
+]
+
+[project.optional-dependencies]
+fontlab = ["fontlab-fontlabapp>=1.2.0"]
+test = ["pytest>=8", "pytest-cov>=6"]
+fontbuild = [
+    "ufo2ft>=3.9.1",
+]
+
+[tool.hatch.version]
+source = "vcs"
+[tool.hatch.version.raw-options]
+fallback_version = "0.1.0"
+[tool.hatch.build.targets.wheel]
+packages = ["src/fontlab_fontport"]
+[tool.hatch.build.targets.sdist]
+only-include = ["install.vfpy", "Scripts", "tools", "src", "tests", "examples", "src_docs/md/guides", "verification/issue-105/NATIVE-MANIFEST.json", "pyproject.toml", "README.md", "LICENSE", "NOTICE", "CHANGELOG.md", "DEPENDENCIES.md", "test.sh"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+extend-exclude = [".local"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP", "B", "DTZ", "BLE", "SIM", "RUF", "PLC", "PYI"]
+# Native/optional dependencies must remain lazy; Unicode text fixtures use en dash.
+ignore = ["PLC0415"]
+allowed-confusables = ["–"]
+[tool.fontlab-install]
+# install.vfpy: reverse-domain id; FontLab keeps Extensions/<id>/install.log.
+id = "com.fontlab.fontport"
+# FontLab needs App for the native write guards (the `fontlab` extra).
+dependencies = [
+    "defcon>=0.12,<1",
+    "fontlab-python-pens>=1.0.0",
+    "fontParts>=1.1.1,<1.2",
+    "fontPens>=0.2.4",
+    "fontTools>=4.59",
+    "ufoLib2>=0.18",
+    "fontlab-fontlabapp>=1.2.0",
+]
+
+[tool.uv.sources]
+# fontlab-fontlabapp is not published; resolve it from the sibling checkout.
+fontlab-fontlabapp = { path = "../fontlab-fontlabapp", editable = true }
+# fontlab-python-pens is not published either.
+fontlab-python-pens = { path = "../fontlab-python-pens", editable = true }

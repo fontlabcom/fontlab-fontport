@@ -1,0 +1,18 @@
+Fontport source provenance
+==========================
+The former src/fontlab_fontport/ui editors and feature-block helper
+implementation have returned to fontlabapp/fontui in FontLab App. Fontport
+retains only UI migration tombstones and the deprecated feature_blocks.py
+forwarder. That code originated in FontLab App (fontlab-fontlabapp), originally
+BSD-3-Clause, Copyright (c) 2022 Adam Twardoch. The same copyright owner relicenses and includes this code under
+this repository's Apache License 2.0. See LICENSE for the licence terms.
+
+The feature-block helpers in src/fontlab_fontport/feature_blocks.py were relocated
+from FontLab App (fontlab-fontlabapp), originally BSD-3-Clause, Copyright (c)
+2022 Adam Twardoch. The same copyright owner relicenses and includes this code
+under this repository's Apache License 2.0. See LICENSE for the licence terms.
+Since issue 205 that module is only a forwarder to fontlabapp.fontui.feature_blocks.
+
+The Qt editors (formerly src/fontlab_fontport/ui/*) moved back to
+fontlab-fontlabapp as fontlabapp.fontui in issue 201 and are no longer part of
+this repository.

@@ -1,0 +1,1172 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Fontport for FontLab public contracts and complete maintained guides.">
+      
+      
+      
+        <link rel="canonical" href="https://fontlabcom.github.io/fontlab-fontport/guides/NATIVE-BOUNDARIES/">
+      
+      
+        <link rel="prev" href="../LIVE-PEN-RECIPES/">
+      
+      
+        <link rel="next" href="../NATIVE-FEATURES/">
+      
+      
+        
+      
+      
+      
+      
+        
+        
+        
+          <link rel="icon" href="../../assets/images/favicon.png">
+        
+      
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-materialx-10.1.8">
+    
+    
+      
+        <title>NATIVE-BOUNDARIES - Fontport for FontLab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.314bbef5.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a45159b5.min.css">
+      
+    
+    
+
+    
+
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/local.css">
+    
+      <link rel="stylesheet" href="https://i.fontlab.com/fltheme26/1.0.0/components.css">
+    
+      <link rel="stylesheet" href="https://i.fontlab.com/fltheme26/1.0.0/theme.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <script src="https://i.fontlab.com/menu/fontlab.js" defer></script>
+
+  </head>
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" data-mx-topbar="glass">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="toc" type="checkbox" id="__toc" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <label class="md-overlay" for="__toc"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#native-boundaries-for-b05b06-and-live-handles" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  <fontlab-menu mode="light" site-label="Fontport for FontLab"
+                site-url="https://fontlabcom.github.io/fontlab-fontport/"
+                mobile-menu="materialx" mobile-search="materialx"></fontlab-menu>
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Fontport for FontLab" class="md-header__button md-logo" aria-label="Fontport for FontLab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Fontport for FontLab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              NATIVE-BOUNDARIES
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fontlabcom/fontlab-fontport" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fontlabcom/fontlab-fontport
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Fontport for FontLab" class="md-nav__button md-logo" aria-label="Fontport for FontLab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Fontport for FontLab
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fontlabcom/fontlab-fontport" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fontlabcom/fontlab-fontport
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fonts-pens-and-interchange/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fonts Pens And Interchange
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development-and-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development And Limits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complete maintained guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Complete maintained guides
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FONTPARTS-COVERAGE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FONTPARTS-COVERAGE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTEGRATION
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LIVE-PEN-RECIPES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LIVE-PEN-RECIPES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NATIVE-BOUNDARIES
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NATIVE-BOUNDARIES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="#structured-storage-correction-after-c4-t9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structured storage correction after C4 T9
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#named-native-limits-and-lib-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Named native limits and lib keys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#master-scope-and-unfinished-geometry-round-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Master scope and unfinished geometry (Round 13)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#round-14-history-and-explicit-master-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Round-14 history and explicit master scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NATIVE-FEATURES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NATIVE-FEATURES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ROUND10-NATIVE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROUND10-NATIVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ROUND12-NATIVE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROUND12-NATIVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ROUND13-NATIVE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROUND13-NATIVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ROUND14-NATIVE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROUND14-NATIVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ROUND15-NATIVE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROUND15-NATIVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UFO-INTERCHANGE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UFO-INTERCHANGE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="#structured-storage-correction-after-c4-t9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structured storage correction after C4 T9
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#named-native-limits-and-lib-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Named native limits and lib keys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#master-scope-and-unfinished-geometry-round-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Master scope and unfinished geometry (Round 13)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#round-14-history-and-explicit-master-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Round-14 history and explicit master scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+
+
+<h1 id="native-boundaries-for-b05b06-and-live-handles">Native boundaries for B05/B06 and live handles</h1>
+<p>The App can import <code>NATIVE_CAPABILITIES</code> and <code>STRUCTURED_ROUTES</code> from
+<code>fontlab_fontport.capabilities</code>, or ask <code>NativeFontBackend.capabilities()</code> for
+a detached snapshot. A false capability is an explicit contract, not a probe
+that mutates a document. <code>glyph.externalChangeNotifications</code> is false: native
+edits/Undo/Redo do not notify defcon automatically. Show “Reload required”,
+call <code>font.refresh()</code> and reacquire glyph/layer handles. Adapter-originated
+accepted edits still mark defcon dirty and invalidate component representations.</p>
+<p><code>StaleObjectError</code> identifies closed documents and invalidated/removed bindings.
+Public cached glyph/child/info/group/kerning/feature/lib reads check the owner;
+backend IDs are reacquired rather than retaining FontLab native pointers. A
+private <code>.naked()</code> defcon object deliberately obtained before closure is outside
+the guarded FontParts API. Do not keep/use native wrappers after closure.</p>
+<table>
+<thead>
+<tr>
+<th>Boundary</th>
+<th>Current contract / C4 reproducer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exact one info Undo row</td>
+<td>D18 default <code>require_single_undo=False</code> keeps info editable with the verified extra no-op row. Opt-in True refuses changing batches before checkpoint/write. C4 single-undo phases test the refusal; structured phases explicitly opt into legacy history to probe real setters</td>
+</tr>
+<tr>
+<td>Optional absent metric</td>
+<td>None raises <code>UnsupportedCapability('info.&lt;field&gt;.absent', ...)</code>, before any assignment/checkpoint; no zero is written. Concrete native master doubles do not encode absence. C4 unset-metric phases</td>
+</tr>
+<tr>
+<td>Unicode native classes</td>
+<td>Changing mappings containing Unicode class names raise <code>groups.unicodeNames</code> before native construction/write/history. Existing identical mappings remain no-ops. C4 unicode-class phases</td>
+</tr>
+<tr>
+<td>Divergent both-sided classes</td>
+<td>One native class has one membership array. Divergent public.kern1/kern2 projections of that same native group raise <code>groups.divergentBothSides</code> during planning, before writes/checkpoints. C4 both-sided phases require a real KernBothSide fixture; a missing prerequisite is a failed native acceptance check</td>
+</tr>
+<tr>
+<td>Legacy native group flags / VFJ</td>
+<td><code>require_persistence=True</code> is opt-in; the default False preserves v1.0.0 editing/save. Font-global groups not in FeaClassGroupMode cause changing group mappings and VFJ saves to refuse before writes/history. Ordinary feature/current-master groups remain editable. Explicit False opts into the old route. C4 creates an owned legacy-mode fixture, verifies group-write/save refusal and file absence, then removes it before structured setter checks. Original FontLab flag loss still needs an upstream issue</td>
+</tr>
+<tr>
+<td>Fractional native kerning</td>
+<td>Any changing operation involving current/requested fractional kerning raises <code>kerning.fractionalHistory</code> before writes/history. An identical fractional snapshot remains a no-op. C4 fractional-kerning phases</td>
+</tr>
+<tr>
+<td>Fractional native anchors</td>
+<td><code>_stage_source</code> refuses as <code>glyph.anchor.precision</code> before import/native staging or target writes. A rejected live edit restores the accepted defcon model. C4 glyph/fractional-anchor phases</td>
+</tr>
+<tr>
+<td>Non-ASCII glyph names</td>
+<td><code>glyph.name.unicodeVfj</code> refuses before native create/rename/geometry writes. No speculative encoding conversion. C4 glyph/unicode-name phases</td>
+</tr>
+</tbody>
+</table>
+<p>D18 preserves the <strong>v1.0.0 default editing contract</strong>. Info edits and saves work;
+strict history/persistence checks are opt-in (<code>require_single_undo=True</code> on
+info.apply, <code>require_persistence=True</code> on backend group/save operations).
+Untouched legacy groups and Unicode glyph names do not block ordinary saves.
+Fontport refuses unsafe new glyph names, fractional anchors/kerning and other
+unroundtrippable edits before writing; these never become save-time surprises.
+It does not certify that FontLab preserves every foreign baseline field.
+The extra-checkpoint and legacy-VFJ defects remain unresolved host behavior.
+C4 owns filing/linking the fl
+issues with the actual build, original failing receipts and minimal reproducer.</p>
+<h2 id="structured-storage-correction-after-c4-t9">Structured storage correction after C4 T9</h2>
+<p>The fg::Style setters are not evidence of native persistence. C4 on 9.0.9783
+measured lost Panose/weight/width/name-record writes after Undo/VFJ reopening.
+The master-backed routes now used by Fontport match Font Info:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Bound property / source</th>
+<th>Persisted storage / source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>openTypeOS2Panose</td>
+<td>flPackage.panose string; Proteus/pygate/pyflpackage.cpp:1512–1516</td>
+<td>keyPackageMaster._panose, flpackage.cpp:17199–17220; master writer :5875</td>
+</tr>
+<tr>
+<td>openTypeOS2WeightClass</td>
+<td>flPackage.weight_value; pyflpackage.cpp:949</td>
+<td>keyPackageMaster._weight_value, flpackage.cpp:17350–17354; writer :5853</td>
+</tr>
+<tr>
+<td>openTypeOS2WidthClass</td>
+<td>flPackage.width_value; pyflpackage.cpp:951</td>
+<td>keyPackageMaster._width_value, flpackage.cpp:17356–17360; writer :5854</td>
+</tr>
+<tr>
+<td>openTypeNameRecords</td>
+<td>Changing writes refuse info.openTypeNameRecords.persistence</td>
+<td>info setter mutates regenerated fg::Style names (pyflpackage.cpp:2031–2078). Font Info writes localizedNames via setLocalizedNames (workspace2/fontinfo_data.cpp:520; flpackage.cpp:16806–16836), absent from the Python bindings/stubs. MCP set_font_info's global whitelist (common/mcp/mcptools_fonts.cpp:469–565) has no localized/name-record route.</td>
+</tr>
+<tr>
+<td>postscriptStemSnapH/V</td>
+<td>Existing info setters, pyflpackage.cpp:3197,3237</td>
+<td>Existing native stem routes; C4 T9 did not report their Undo/VFJ failure</td>
+</tr>
+</tbody>
+</table>
+<p>The model source paths above are under Proteus/common/model/. Font Info itself
+loads master values at fontinfo_data.cpp:391–392 and Panose at :402, then stores
+the same properties at :586–596. Panose's empty native string reads as absent
+(None), not invented zeros. Weight/width getter rounding follows fg::round.</p>
+<p>All validation and name-record refusal precede checkpoints or writes, including
+mixed batches. Master-backed writes retain package/mastersContainer pre/post
+notifications. C4 must re-run the phased read/edit/Undo/Redo/VFJ checks; source
+verification and mocked checkpoints do not prove the new route natively.
+The catalogue marks the derived name-record getter as bound but write=None,
+write_supported=False, rather than advertising the nonpersistent setter.</p>
+<h2 id="named-native-limits-and-lib-keys">Named native limits and lib keys</h2>
+<p>Dangling native kerning glyph/group references refuse kerning.danglingNames;
+MCP's own group creation resolves actual flGlyph objects before its command
+(common/mcp/mcptools_metrics_kerning.cpp:709–715). Plain feature classes retain
+their existing mapping policy. No phantom glyphs are created.
+Unresolved/cyclic components refuse components.unresolvedBase, identifiers
+refuse identifiers, and unsetting concrete non-metric info refuses info.unset.
+Metric absence retains the more specific info.<field>.absent name.</p>
+<p>Native QVariant tuples are recursively exposed as UFO lists. The known host
+key com.fontlab.kerningClassesInMainMaster is hidden from public font.lib keys,
+kept unchanged through edits/clear, and cannot be assigned through that view
+(lib.reservedKey). Other foreign lib entries remain visible and keep the
+existing unchanged-leaf preservation contract.</p>
+<h2 id="master-scope-and-unfinished-geometry-round-13">Master scope and unfinished geometry (Round 13)</h2>
+<p>Panose, OS/2 weight and OS/2 width writes affect the <strong>key master only</strong>, not
+every master. Their package properties delegate to keyPackageMaster (source
+locations in the table above); batch callers must not infer all-master edits.</p>
+<p>Invalidation, refresh, save and staged edits refuse <code>glyph.incompleteContours</code>
+while provisional point sequences remain. Closing emits a RuntimeWarning with
+that capability name before discarding provisional edits and closing the owned
+document with save=False. This permits fixture cleanup without silently losing
+editing state. Complete or remove provisional contours before invalidating.</p>
+<p>Non-integral UPM refuses <code>info.unitsPerEm.fractional</code> before writes. Integral
+floats and integer subclasses used by UFO OS/2 weight/width exports are accepted;
+bools are not numeric metrics.</p>
+<h2 id="round-14-history-and-explicit-master-scope">Round-14 history and explicit master scope</h2>
+<p><code>glyph.exactSingleUndo</code> is false: pre/post notifications add a no-op checkpoint
+in addition to the restoring edit. Working shapes are cloned after the baseline
+notification to keep stored geometry untouched. The first Undo must restore
+contours.</p>
+<p><code>capabilities()</code> exposes each Panose/weight/width/stem-snap route with
+<code>bound: "key-master"</code>; STRUCTURED_ROUTES reports the same scope. No per-master
+write argument is advertised. Invalid per-side native class membership refuses
+<code>groups.multiMembership</code> before mutation/history.</p>
+<p>Round-15 read comparisons exclude only root MCP <code>lastModified</code>, named
+<code>fontlab.lastModified</code>: it is an edit/save timestamp, not a reversible font value.
+Raw receipts retain it; nested lib values with that name remain significant.
+Glyph creation history is counted on the package, subsequent glyph edits on
+the glyph graph. Undo/Redo/reopen payload and geometry comparisons remain gates.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+          <div class="md-top" data-md-component="top" hidden>
+  <div class="md-top__center">
+    <button type="button" class="md-top__button md-top__button--main" data-md-action="top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+      <span>Back to top</span>
+    </button>
+    
+      
+      
+      <label class="md-top__button md-top__side md-top__side--nav" for="__drawer" >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-panel-left" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>
+      </label>
+    
+    
+      
+      
+      <label class="md-top__button md-top__side md-top__side--toc" for="__toc" >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-panel-right" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M15 3v18"/></svg>
+      </label>
+    
+  </div>
+</div>
+      </main>
+      
+  
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://jaywhj.github.io/mkdocs-materialx/" target="_blank" rel="noopener">
+      MaterialX
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+  <fontlab-footer mode="light"></fontlab-footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "code": null, "features": ["search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fc193f93.min.js"></script>
+      
+        <script src="https://i.fontlab.com/fltheme26/1.0.0/basecoat.js"></script>
+      
+        <script src="https://i.fontlab.com/fltheme26/1.0.0/theme.js"></script>
+      
+    
+  </body>
+</html>

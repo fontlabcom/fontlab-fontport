@@ -1,0 +1,1210 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Fontport for FontLab public contracts and complete maintained guides.">
+      
+      
+      
+        <link rel="canonical" href="https://fontlabcom.github.io/fontlab-fontport/guides/NATIVE-FEATURES/">
+      
+      
+        <link rel="prev" href="../NATIVE-BOUNDARIES/">
+      
+      
+        <link rel="next" href="../ROUND10-NATIVE/">
+      
+      
+        
+      
+      
+      
+      
+        
+        
+        
+          <link rel="icon" href="../../assets/images/favicon.png">
+        
+      
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-materialx-10.1.8">
+    
+    
+      
+        <title>NATIVE-FEATURES - Fontport for FontLab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.314bbef5.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a45159b5.min.css">
+      
+    
+    
+
+    
+
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/local.css">
+    
+      <link rel="stylesheet" href="https://i.fontlab.com/fltheme26/1.0.0/components.css">
+    
+      <link rel="stylesheet" href="https://i.fontlab.com/fltheme26/1.0.0/theme.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <script src="https://i.fontlab.com/menu/fontlab.js" defer></script>
+
+  </head>
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" data-mx-topbar="glass">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="toc" type="checkbox" id="__toc" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <label class="md-overlay" for="__toc"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#native-feature-storage-fontlab-9" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  <fontlab-menu mode="light" site-label="Fontport for FontLab"
+                site-url="https://fontlabcom.github.io/fontlab-fontport/"
+                mobile-menu="materialx" mobile-search="materialx"></fontlab-menu>
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Fontport for FontLab" class="md-header__button md-logo" aria-label="Fontport for FontLab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Fontport for FontLab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              NATIVE-FEATURES
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fontlabcom/fontlab-fontport" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fontlabcom/fontlab-fontport
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Fontport for FontLab" class="md-nav__button md-logo" aria-label="Fontport for FontLab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Fontport for FontLab
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fontlabcom/fontlab-fontport" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fontlabcom/fontlab-fontport
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fonts-pens-and-interchange/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fonts Pens And Interchange
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development-and-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development And Limits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complete maintained guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Complete maintained guides
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FONTPARTS-COVERAGE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FONTPARTS-COVERAGE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTEGRATION
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LIVE-PEN-RECIPES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LIVE-PEN-RECIPES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NATIVE-BOUNDARIES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NATIVE-BOUNDARIES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NATIVE-FEATURES
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NATIVE-FEATURES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="#exact-read-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exact read path
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exact-structured-write-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exact structured write path
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canonicalization-and-source-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canonicalization and source evidence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#five-second-deadline-and-native-acceptance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Five-second deadline and native acceptance
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ROUND10-NATIVE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROUND10-NATIVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ROUND12-NATIVE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROUND12-NATIVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ROUND13-NATIVE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROUND13-NATIVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ROUND14-NATIVE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROUND14-NATIVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ROUND15-NATIVE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROUND15-NATIVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UFO-INTERCHANGE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UFO-INTERCHANGE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="#exact-read-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exact read path
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exact-structured-write-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exact structured write path
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canonicalization-and-source-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canonicalization and source evidence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#five-second-deadline-and-native-acceptance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Five-second deadline and native acceptance
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+
+
+<h1 id="native-feature-storage-fontlab-9">Native feature storage (FontLab 9)</h1>
+<p>Fontport reads VFJ-canonical feature text and writes explicit ordered blocks.
+The Round-4 claim that no lossless native route existed was wrong: it missed
+<code>fontpr.get_font_info</code>, which uses the VFJ writer, and the equivalence of the
+bound fragment setters to FontLab's VFJ loader. This document supersedes that
+claim. Native timing, first Undo/Redo and saved-artifact proof remain required.</p>
+<div class="highlight"><pre><span></span><code><span class="n">blocks</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">get_blocks</span><span class="p">()</span>
+<span class="c1"># {"prefix": "...", "features": [("kern", "feature kern {...} kern;\n"), ...]}</span>
+<span class="n">tag</span><span class="p">,</span> <span class="n">code</span> <span class="o">=</span> <span class="n">blocks</span><span class="p">[</span><span class="s2">"features"</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">blocks</span><span class="p">[</span><span class="s2">"features"</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="n">code</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"># edited code</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">font</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">set_blocks</span><span class="p">(</span><span class="n">blocks</span><span class="p">,</span> <span class="n">undo_name</span><span class="o">=</span><span class="s2">"Edit feature"</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">font</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">text</span> <span class="o">==</span> <span class="n">blocks</span><span class="p">[</span><span class="s2">"prefix"</span><span class="p">]</span> <span class="o">+</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">code</span> <span class="k">for</span> <span class="n">tag</span><span class="p">,</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">blocks</span><span class="p">[</span><span class="s2">"features"</span><span class="p">])</span>
+</code></pre></div>
+<p>NativeFontBackend exposes the same operations as <code>get_feature_blocks()</code> and
+<code>set_feature_blocks()</code>. Reads are detached. Prefix and feature strings preserve
+Unicode, CR/CRLF, whitespace and comments; feature order is explicit. OT panel
+classes remain separate font groups and are not duplicated into the prefix.</p>
+<h2 id="exact-read-path">Exact read path</h2>
+<p><code>fontpr.get_font_info(font_id=...)</code> returns the <code>openTypeFeatures</code> array, with an
+optional first <code>{feature: prefix}</code> entry followed by ordered <code>{name, feature}</code>
+entries. <code>blocks_from_info(info)</code> parses that snapshot; <code>features.text</code> joins
+its prefix and feature strings. Missing <code>openTypeFeatures</code> means empty stored
+text, including a binary-only font. Malformed/unrecognized records raise rather
+than being silently dropped.</p>
+<p>VFJ permits named empty records such as <code>{"name": "ccmp"}</code>: its loader defaults
+an omitted <code>feature</code> to an empty QString and stores an empty named slot. The
+text-block API omits these textless slots (including explicit empty strings),
+and ignores entirely empty anonymous records just as the loader does. Raw
+<code>read_info</code> snapshots and driver receipts retain every original array record.
+Sixteen GetGo VFJs have these empty named slots. A no-op text write preserves
+them; a changing write refuses that current baseline before mutation, naming
+the empty tag: the whole-text Undo stream cannot reconstruct a tag with no
+text. This is an explicit native history limitation, not an unknown-record error.</p>
+<p>Do not use <code>fgOTLayout.get_prefix()</code> as this source: it requests synthesized
+panel classes. Do not use <code>keys()/get_feature()</code> either: they can fall back to
+binary decompilation when stored FEA text is absent. Fontport has no such fallback.
+If embedded <code>fontpr</code> is unavailable, reading fails explicitly with RuntimeError.</p>
+<h2 id="exact-structured-write-path">Exact structured write path</h2>
+<p>The entire <code>{prefix: str, features: [(tag, code), ...]}</code> batch is validated before
+history or mutation. Tags require four printable ASCII bytes, unique names and
+<code>aalt</code> first if present (native storage forces it to the front). Strings must be
+UTF-8 encodable and NUL-free. Syntax is stored without compilation.</p>
+<p>Changing native writes refuse prefixes that require language-system synthesis. The
+native test is a literal <code>languagesystem</code> substring (even in a comment), or an
+initial nonblank/noncomment line starting with <code>include</code>. Its scan splits on LF
+or lone CR, trimming only space/tab/LF: a CRLF blank line retains <code>\r</code> and stops
+the scan, so an include after it does not suppress synthesis. LF blank lines
+are skipped. Otherwise FontLab can
+prepend a <code>#&gt; languagesystem</code> block during metadata reads or save/reopen.
+Its generated script/language pairs depend on font glyph Unicode values,
+feature bodies and native build options; the pure structured API lacks that
+context and does not guess. <code>stage_blocks</code> checks only split-back fidelity.
+<code>write_blocks</code> stages first, reads the current snapshot, and returns immediately
+for identical values. Only a changing staged value receives the synthesis
+check, before history/mutation; the current Undo baseline never does.
+Feature-less fonts with no feaTextStorage have no serializer injection, so their
+identical empty writes succeed and an explicit language-system feature add is
+allowed. Changing/clearing a nonempty font to an empty prefix still raises a
+precise <code>ValueError</code>, because clear/set_prefix would allocate storage that can
+synthesize text. Reads remain available for every snapshot.</p>
+<p>Undo/Redo restores a concatenated FEA stream through FontLab's whole-text
+splitter, not through the VFJ array loader. Consequently <code>stage_blocks</code> and
+<code>set_blocks</code> simulate that splitter with the pure <code>split_history_text</code> function
+in <code>native_feature_split.py</code>. The acceptance rule is exact: concatenate the
+prefix and ordered codes, simulate history loading, and require exactly the
+same prefix and <code>(tag, code)</code> pairs back. There is no raw-keyword prohibition.</p>
+<p>The simulation works on UTF-8 byte offsets with the native destructive strtok
+semantics and delimiter set. When the next non-delimiter character is <code>#</code>, the
+entire comment line is one token; <code>feature</code> inside it never splits a block.
+After a header the native algorithm seeks the first matching tag token before
+looking for the next <code>feature</code> token. Thus normal <code>aalt</code> references such as
+<code>feature sups;</code> before the closing tag are accepted. Like native code, this is
+not a brace-aware grammar: a matching tag token earlier in a body can affect
+where the next keyword search begins. The simulation also models duplicate-tag
+retention, <code>aalt</code> placement, LF appending by FeaTextBlock and name-table extraction.</p>
+<p>Leading comments/whitespace in a named code, a different declared tag, multiple
+independent blocks in one pair, or a name table removed on history loading are
+refused when they change the reconstructed model. <code>ValueError</code> identifies the
+affected prefix/block and differing prefix, tag, code or block count before
+history or mutation. A changing write checks the current Undo baseline too.
+A tagless trailing <code>feature</code> is refused before native calls: the native loader
+can read past its heap buffer at <code>token + 8</code> (reviewer's ASan probe).
+The Round-6 blanket rejection of comment/body keywords was wrong and is replaced
+by this simulation. Reads preserve nonempty native fragments without imposing
+write-side split-back checks. Actual native array/whole-text/class receipts
+remain required; the simulation neither compiles nor validates general FEA.</p>
+<p>Writes replay the VFJ loader: <code>fgFont.features.clear()</code>, <code>set_prefix(prefix)</code>,
+then <code>set_feature(tag, code)</code> in order. <code>clearFeaText(false)</code> leaves group classes
+untouched. The backend initializes package history and wraps writes with
+<code>notifyChangesApplied(name, [package, package.featuresContainer()])</code> before/after,
+calling <code>notifyFeaturesChanged(font_id, False)</code> after the fragment writes.
+Identical writes and invalid batches add no history. Unexpected native failures
+can leave partial writes; this is not an atomic transaction.</p>
+<p><code>features.text = existing_text</code> is a no-op. Native <code>None</code> is a no-op when already
+feature-less; clearing existing features is refused by the synthesis guard
+above. A different arbitrary text string raises
+<code>UnsupportedCapability</code> with capability <code>font.features.text.split</code>: only native
+whole-text <strong>splitting</strong> (<code>setFeaText/loadFeaTextInfo</code>) remains unbound. The pure
+simulation validates explicit text blocks; it does not enable arbitrary FEA
+import through the text setter. Use the structured setter for history-stable
+blocks, subject to the empty-slot baseline limitation above.</p>
+<h2 id="canonicalization-and-source-evidence">Canonicalization and source evidence</h2>
+<p>Paths below refer to the read-only native source tree and captured declarations.</p>
+<table>
+<thead>
+<tr>
+<th>Contract</th>
+<th>Primary evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Embedded callable APIs</td>
+<td>Echopy <code>fontpr.pyi:27,87</code>, <code>fontgate.pyi:3573–3618</code>, <code>fontlab.pyi:6767,9901</code>. <code>Proteus/common/mcp/fontpr_module.cpp:139–145,196–212</code> registers tools and directly calls <code>MCPTools::callTool</code>, without loopback HTTP. <code>mcptools.cpp:713</code> explicitly permits fontpr calls inside run_python; only recursive run_python/output calls are blocked.</td>
+</tr>
+<tr>
+<td>Canonical serializer</td>
+<td><code>mcptools_fonts.cpp:796–811</code> calls <code>packageInfoJson</code>; <code>Proteus/common/model/flpackage.cpp:6089–6118</code> calls the same <code>writeFeatures</code> used for VFJ save. JSON writer <code>flblockwriterqjson.cpp:53–55</code> always uses formatJSON; <code>bin_types.cpp:642,644</code> names the fields.</td>
+</tr>
+<tr>
+<td>Prefix without panel classes, feature order</td>
+<td><code>flpackage.cpp:6925–6965</code>: <code>dumpFeaPrefix(..., false)</code> plus ordered feature dumps, guarded by hasFeaText.</td>
+</tr>
+<tr>
+<td>VFJ-equivalent writes</td>
+<td><code>flpackage.cpp:10215–10252</code>: clearFeaText(false), setPrefixText and ordered setFeatureText. <code>pyfontgate/fgotlayout.cxx:280–312</code> binds those same calls. Default false is in <code>FontGate/opentype/layout.h:817</code>; <code>l_fea.cpp:3212–3238</code> forces aalt first.</td>
+</tr>
+<tr>
+<td>Whole-text equivalence</td>
+<td><code>FontGate/opentype/layout.cpp:1277–1284</code> and <code>l_fea.cpp:3574–3612</code>: dumpFeaText(false) uses the same prefix output plus feature texts.</td>
+</tr>
+<tr>
+<td>Language synthesis</td>
+<td><code>layout.cpp:1387–1390</code> defines hasFeaText by storage existence; <code>flpackage.cpp:6931</code> returns before serialization when storage is absent. A no-op does not allocate storage. <code>l_fea.cpp:3299–3357</code> checks the literal marker/initial include exception; <code>xml/xml_write_aux.cpp:63–75</code> trims only space/tab/LF. <code>dumpPrefixText</code> at 4384–4398 emits the auto-tagged block; <code>flpackage.cpp:6938–6942</code> calls it for VFJ/metadata. Pairs depend on glyph scripts/build configuration (<code>l_fea.cpp:472–546</code>) and feature languages (<code>549–590,3015–3034</code>). Only changing staged values receive the prefix refusal; current Undo baselines do not.</td>
+</tr>
+<tr>
+<td>Table-name correction</td>
+<td><code>l_fea.cpp:3362–3432</code> extracts a name table on whole-text loading; its tablesTexts output is commented out in dumpFeaFile at 3585–3602. A structured prefix could otherwise store table code verbatim, but the split-back check now refuses it because Undo would extract it.</td>
+</tr>
+<tr>
+<td>Empty named records</td>
+<td><code>flpackage.cpp:10224–10252</code> defaults feature/name to empty QString, ignores an entirely empty record, and stores a named empty slot with setFeatureText. <code>l_fea.cpp:2877–2884,3120–3130,4452–4461</code> keeps the tag while dumping no code. The text API omits textless slots; changing native writes refuse this unrepresentable history baseline.</td>
+</tr>
+<tr>
+<td>History</td>
+<td><code>flpackage.cpp:2399–2455</code> featuresContainer serializes/restores feature state. <code>writeFeaturesFea</code> at 6978–6990 dumps whole text; <code>readFeaturesFea</code>/<code>readFeatures</code> at 7523–7563,7610 restore via setFeaText. <code>l_fea.cpp:3037–3070,3435–3560</code> tokenizes/splits and re-keys blocks; <code>layout.cpp:741–749</code> appends LF to nonempty fragments. Exact simulated split-back equality replaces the Round-6 keyword guard.</td>
+</tr>
+</tbody>
+</table>
+<p>The read-only corpus regression covers <strong>99/99 GetGo VFJs</strong>: all stage unchanged
+and all identical writes succeed before native allocation/history. There are
+85 with feature records and 14 feature-less fonts. Only changing writes that
+add features without a language-system prefix are refused for those 14.
+Corpus discovery prefers an existing <code>FONTPORT_GETGO_DIR</code>, then searches every
+ancestor of the test file for <code>fontlab-python-examples/testdata/getgo</code>; it skips
+only when none exists. Both canonical/worktree layouts are tested. A temporary standalone C++ probe
+compiles the inspected tokenizer/loader functions with minimal storage stubs;
+the Python history simulation matches their outputs for all 99 fonts and 12 edge
+cases, including a single-line name table whose unread last byte survives rdbuf.
+This is source-level host-free evidence, not FontLab runtime/Undo proof. The
+old probe and its per-font hash receipts were removed with the round tooling
+(issue 201); they remain in git history.</p>
+<h2 id="five-second-deadline-and-native-acceptance">Five-second deadline and native acceptance</h2>
+<p><code>get_font_info</code> includes groups, masters, info, hinting, tables and lib, but no
+outline traversal. Its native schema supports only <code>detail=full</code> or <code>hinting</code>;
+there is no narrower feature-only filter in the inspected binding. Repeating or
+chunking Python work cannot interrupt one metadata serialization call.</p>
+<p>The driver warms imports separately, then performs one read/write/history/save/
+reopen operation per call, enforcing &lt;4 s wall time. <code>--features-only</code> isolates
+B08 and adds a separate Plum variable-font metadata timing call after Medio.
+If either call exceeds budget, split handoff at the RPC boundary: obtain a
+<code>get_font_info</code> snapshot as a direct external MCP tool call outside run_python,
+then use <code>blocks_from_info</code> for detached parsing. This moves the read outside
+the fixed run_python deadline; it does not prove a faster native serializer or
+make an oversized write safe. The synchronous backend write still reads current
+metadata for its no-op check. No deadline-safe large-font claim is made yet.</p>
+<p>The native driver edits one Medio feature, checks byte-equal UTF-8 strings and
+order with classes unchanged, tests first Undo/Redo, saves/reopens the edit, then
+restores the original blocks and saves/reopens again to compare original bytes.
+Receipts return <code>rows_equal</code>, <code>whole_text_equal</code> and <code>classes_equal</code> independently,
+along with observed arrays, classes, joined text and observed/expected SHA-256
+hashes. A mismatch does not raise before returning evidence: the runner retains
+the receipt, marks acceptance failed and continues the remaining phases and
+cleanup. A row-boundary/tag difference can thus be distinguished from text loss.
+No-op and arbitrary-split refusal phases also record flags, observed history
+states and exception type/message/capability instead of asserting. Missing named
+fixture features and unavailable staged edits likewise become acceptance flags.
+The separate <code>feature-synthesis-refusal</code> phase attempts an empty-prefix edit,
+records the precise refusal and unchanged history, and retains a failing receipt
+if the refusal or history check differs.
+Native execution uses the shared mutating-session runner and owned GetGo copies,
+then requires a FontLab restart. Host-free replay tests are not native receipts.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+          <div class="md-top" data-md-component="top" hidden>
+  <div class="md-top__center">
+    <button type="button" class="md-top__button md-top__button--main" data-md-action="top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+      <span>Back to top</span>
+    </button>
+    
+      
+      
+      <label class="md-top__button md-top__side md-top__side--nav" for="__drawer" >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-panel-left" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>
+      </label>
+    
+    
+      
+      
+      <label class="md-top__button md-top__side md-top__side--toc" for="__toc" >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-panel-right" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M15 3v18"/></svg>
+      </label>
+    
+  </div>
+</div>
+      </main>
+      
+  
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://jaywhj.github.io/mkdocs-materialx/" target="_blank" rel="noopener">
+      MaterialX
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+  <fontlab-footer mode="light"></fontlab-footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "code": null, "features": ["search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fc193f93.min.js"></script>
+      
+        <script src="https://i.fontlab.com/fltheme26/1.0.0/basecoat.js"></script>
+      
+        <script src="https://i.fontlab.com/fltheme26/1.0.0/theme.js"></script>
+      
+    
+  </body>
+</html>

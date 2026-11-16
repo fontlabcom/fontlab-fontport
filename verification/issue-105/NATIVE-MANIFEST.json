@@ -1,0 +1,405 @@
+{
+  "this_file": "verification/issue-105/NATIVE-MANIFEST.json",
+  "issue": 105,
+  "status": "host-free implementation; native runs pending",
+  "numbering": "Task 2/3 are from the workspace issue-105 plan; P1..P9 are this worktree PLAN.md items; B01..B10 are UI-SPEC behavior families. issues/105.md itself has no numbered implementation items. Issue row 15 permits typerig-lib; the no-dependency decision is documented in README/DEPENDENCIES.",
+  "fixture_root": "../../fontlab-python-examples/testdata/getgo",
+  "safety": [
+    "All native runs must use ../../verification/issue-104/fl-native.sh --mutating in a dedicated no-document session.",
+    "Copy the named VFJ into a fresh owned output directory before opening; never save over corpus paths or use user-open fonts.",
+    "Use Python 3.11 arm64 dependencies. The source command explicitly adds Glyport src with the supported --extra-source flag; Fontport src precedes dependency site-packages. CLI paths resolve in the external invoking shell. --dry-run validates both package origins before connecting or copying fixtures. For installed-artifact proof pass --source once per independent installed site-packages path and exclude checkout src. Both project module trees are purged before warming and their imported __file__ origins asserted.",
+    "Each warm import, open, write, Undo, Redo, save, reopen and check uses a separate run_python call. The driver enforces a 4-second margin and preserves the failing phase and cleanup errors. No automatic retries.",
+    "Disconnect owned widget signals and close owned fonts with save=False. Return to the normal event loop between RPCs; never flush application-wide deferred deletes. Record cleanup and restart FontLab after EVERY mutating run, including failure: close the test application and start a fresh dedicated session before another mutating suite. fl-native.sh manages session isolation; it does not restart FontLab."
+  ],
+  "probe_command_from_workspace": "rtk proxy verification/issue-104/fl-native.sh --mutating --lane issue105-x3 -- uv run --project fontlab-remopy python .worktrees/issue-105-fontport/native-drivers/fontport_owned.py --extra-source fontlab-glyport/src",
+  "features": [
+    {
+      "id": "P1-pens-and-live-glyphs",
+      "issue_items": [
+        "Task2",
+        "P1",
+        "B01",
+        "B02",
+        "B03"
+      ],
+      "fixtures": [
+        "cc0/medi/medi.vfj"
+      ],
+      "host_free_tests": [
+        "test_live.py",
+        "test_pens.py",
+        "test_transfer.py"
+      ],
+      "run": "Run fontport_owned.py pen phase and repeat existing native_pens.py/host-native.py acceptance against the copied GetGo document. Snapshot every layer, hint/guide count, component transform and unrelated glyph before edits.",
+      "observe": "Real FontParts contour/point/component/anchor objects and fontPens FlattenPen receive FontGate geometry. Supported width/point writes reach the selected layer only; stale writes fail; other layers/hints survive; first native Undo/Redo and VFJ reopening match snapshots.",
+      "open": "Shared/multiple/transformed native outline writes, replacement/removal of components, fractional anchors, guidelines, full glyph/layer create/delete/rename and exact geometry Undo remain bounded/refused. These require native implementation/proof, not fake host-free support."
+    },
+    {
+      "id": "P2-B05-info",
+      "issue_items": [
+        "Task2",
+        "Task3",
+        "P2",
+        "B05"
+      ],
+      "fixtures": [
+        "cc0/medi/medi.vfj",
+        "cc0/plum/plum-var.vfj"
+      ],
+      "host_free_tests": [
+        "test_info_backend.py"
+      ],
+      "run": "The CLI runs per-field baseline/apply/readback/first-Undo/readback/Redo/readback/save/close/reopen/readback phases. Values differing from the fixture baseline are selected, so no-op fields do not accidentally undo the previous edit.",
+      "observe": "Types and complete values survive. Invalid mixed batches change no field/history. UPM never rescales outlines. Other master info/glyph data stays unchanged. Native name-record setters can also update other name fields: compare the entire info snapshot.",
+      "open": "Unset optional metrics and exact one-history-row behavior remain unresolved. postscriptBlueValues is deliberately unavailable: its advertised native setter raises NotImplementedError in source. Embedding-bit replacement is not exposed without proof.",
+      "driver": "native-drivers/info_steps.py",
+      "driver_status": "host-free tested; native execution pending"
+    },
+    {
+      "id": "P3-B06-groups",
+      "issue_items": [
+        "Task2",
+        "Task3",
+        "P3",
+        "B06"
+      ],
+      "fixtures": [
+        "cc0/plum/plum-var.vfj"
+      ],
+      "host_free_tests": [
+        "test_groups.py",
+        "test_group_edits.py",
+        "test_native_groups.py"
+      ],
+      "run": "Repeat workspace groups-native.py scenarios on the copied fixture: empty/create/rename/delete, duplicate insertion, missing members and dependent pairs; use existing real groups instead of assuming synthetic names.",
+      "observe": "Supported groups preserve unknown groups/master classes, dependent pair policy, first Undo/Redo and VFJ persistence. Native Unicode, divergent both-sided classes and legacy VFJ loss must stay explicit refusals/limitations.",
+      "open": "No UI control changes in this lane; native boundaries remain open."
+    },
+    {
+      "id": "P4-B07-kerning-and-B04-layout",
+      "issue_items": [
+        "Task2",
+        "Task3",
+        "P4",
+        "B04",
+        "B07"
+      ],
+      "fixtures": [
+        "cc0/plum/plum-var.vfj"
+      ],
+      "host_free_tests": [
+        "test_kerning.py",
+        "test_native_kerning.py",
+        "test_kerning_edits.py",
+        "test_glyphrun.py"
+      ],
+      "run": "Repeat workspace kerning-native.py with all four glyph/group pair forms, explicit zero, exception deletion and glyphrun placement on the owned copy, then save/reopen and inspect actual first Undo/Redo.",
+      "observe": "Integer/zero values and effective fallback survive; fractional native edits are refused before history. Sequence preview changes placement while source outlines stay unchanged.",
+      "open": "Fractional history and native non-ASCII naming remain unresolved; installed integrated-head UI proof is separate."
+    },
+    {
+      "id": "P5-B08-features",
+      "issue_items": [
+        "Task2",
+        "Task3",
+        "P5",
+        "B08"
+      ],
+      "fixtures": [
+        "cc0/medi/medi.vfj"
+      ],
+      "host_free_tests": [
+        "test_fontdata.py",
+        "test_native_features.py",
+        "test_native_driver.py",
+        "test_getgo_features.py"
+      ],
+      "run": "Use b08_command_from_workspace for isolated B08. On the owned Medio copy, read fontpr.get_font_info openTypeFeatures/classes in one call, verify canonical joined text in a later call, stage an edit to one existing feature, record identical-no-op history flags and arbitrary-string refusal/history/exception evidence, record the separate empty-prefix/language-synthesis refusal with unchanged history, then apply structured blocks, read bytes/classes, first Undo/readback, Redo/readback, save/close/reopen/readback. Then restore original blocks and save/close/reopen/readback against the original arrays. Finally open owned Plum and time one metadata read. Every native call must measure <4 s; no blocked placeholders.",
+      "observe": "result.json must retain observed ordered openTypeFeatures arrays, classes, whole_text and observed/expected SHA-256 hashes. rows_equal, whole_text_equal and classes_equal must be true for edited readback, Undo, Redo, edited VFJ reopen and original restored VFJ reopen. False flags record acceptance failures without discarding evidence or stopping later phases. Prefix is read only through the VFJ serializer; no panel-class duplication or binary decompilation. Invalid batches and identical writes add no history. Groups are never rewritten by feature writes. No-op and refusal flags must be true, with observed history states and refusal type/message/capability preserved even on failure. Baseline named-feature and staged-edit availability are recorded flags too. The synthesis-refusal phase must report implicit_languagesystem_refused and no_history_for_synthesis_refusal true with error/history evidence.",
+      "open": "Native timings and history/VFJ byte equality remain unproven until run. Pure history split-back staging accepts all 99 GetGo snapshots and all 99 identical writes return before native allocation/history. Their 14 feature-less baselines permit feature additions with explicit languagesystem prefixes. Only changing staged writes receive the font-dependent synthesis check; current Undo baselines do not. A CRLF blank line stops the native initial-include scan because xml trimming preserves CR. Unsafe changing empty-prefix writes remain refused, including clearing existing features; None on an already feature-less font is a no-op. Named empty slots remain in raw evidence and changing writes still refuse their unrepresentable Undo tags. Arbitrary replacement text remains UnsupportedCapability. Metadata timing and native history/class/VFJ receipts remain pending; see docs/NATIVE-FEATURES.md and Round-9 evidence.",
+      "driver": "native-drivers/feature_steps.py",
+      "driver_status": "real equality receipts enabled; mismatches retained as acceptance failures; host-free replay passes; native receipts pending"
+    },
+    {
+      "id": "P5-font-lib",
+      "issue_items": [
+        "Task2",
+        "P5"
+      ],
+      "fixtures": [
+        "cc0/medi/medi.vfj"
+      ],
+      "host_free_tests": [
+        "test_fontdata.py"
+      ],
+      "run": "Seed native foreign CR/CRLF, null and >2**53 probes on the owned fixture; record expected/observed representations and exact/mismatch status without aborting subsequent phases. Overall acceptance fails for a mismatch. Apply an unrelated key; check equality, first Undo/Redo, no-op history, VFJ save/reopen, deletion, clear/Undo and valid nested sibling edits beside foreign null, in separate calls. lib-delete and lib-nested-foreign-edit record typed expected/observed differences after VFJ round-trip without aborting later phases, including missing nested/null values. The driver accumulates these as acceptance failures.",
+      "observe": "Unchanged foreign entries must retain exact text/null/integer values. Only changed values undergo plist/JSON preflight. Invalid changes and no-ops add no history. Both history notifications use [package, package.mastersContainer()]. First native Undo/Redo and saved persistence are assertions to prove, not an established capability. Nested mappings/arrays validate only changed leaves; an unchanged foreign null or large integer can coexist with a valid sibling edit. Native QVariant whole-map preservation remains a gate. An actual failure to delete the owned key remains an assertion; unrelated foreign VFJ differences are recorded as data.",
+      "open": "Native full plist support and glyph-lib precision boundaries remain pending. packageLib is font-global application storage, not proof of automatic fgFont.lib/UFO-export synchronization.",
+      "driver": "native-drivers/fontport_steps.py:lib-*",
+      "driver_status": "host-free tested; native execution pending"
+    },
+    {
+      "id": "P6-world",
+      "issue_items": [
+        "Task2",
+        "P6"
+      ],
+      "fixtures": [
+        "cc0/medi/medi.vfj"
+      ],
+      "host_free_tests": [
+        "test_world.py",
+        "test_live.py",
+        "test_host.py"
+      ],
+      "run": "fontport_owned.py proves explicit world identity, ownership and close. Also borrow an owned fixture through a second FontWorld, close that borrowed binding and assert the document remains. Exercise nested register contexts and exception restoration. Make a native edit/Undo then environment.refresh; externally close the copy and refresh AllFonts.",
+      "observe": "Current/All/Open/New/RFont use real upstream dispatcher without namespace replacement. Existing handles retain identity until closed; loaded glyph handles invalidate on explicit refresh; borrowed close cannot discard native documents. Failed saves/close keep bindings usable.",
+      "open": "Native selection/current glyph dispatch and automatic native event subscriptions are explicitly unavailable. Native MCP save remains copy-writing, not saved-document state."
+    },
+    {
+      "id": "P7-B10-vanilla",
+      "issue_items": [
+        "Task2",
+        "Task3",
+        "P7",
+        "B10"
+      ],
+      "fixtures": [
+        "cc0/medi/medi.vfj"
+      ],
+      "host_free_tests": [
+        "test_vanilla.py"
+      ],
+      "run": "Construct actual PythonQt controls via VanillaSession, including an unopened window dropped by the script but strongly retained by the session. Check Unicode set/get/list selection, quiet setters, native click sender identity and disabled guard. Explicit session close disconnects all child slots and releases its strong references. A later RPC inspects closed state after the normal event loop has run; no forced DeferredDelete flush. Physical input, dialogs and native widget disappearance remain manual observations. Also provoke a base-constructor failure after native widget allocation; retain that incomplete window through explicit session cleanup.",
+      "observe": "Created-never-opened windows stay strongly owned with live Python slots. Python close and native closeEvent route through Glyport teardown; only successful teardown releases ownership. Opened and unopened controls disconnect all tracked signal pairs before deleteLater. Session close is repeatable. Later RPC proves return to the event loop and no session references, not native C++ destruction by itself; inspect that owned windows disappear and host stays usable. Retention is scoped to the explicitly held session, not a process-global registry.",
+      "open": "Actual keyboard/mouse/dialog/nested Qt deletion behavior and callback lifetime require native proof. Standalone controls should be attached to an owned window/group; orphan-widget support is not claimed.",
+      "driver": "native-drivers/vanilla_steps.py",
+      "driver_status": "host-free tested; native execution pending"
+    },
+    {
+      "id": "P8-B09-affine",
+      "issue_items": [
+        "Task3",
+        "P8",
+        "B09"
+      ],
+      "fixtures": [
+        "cc0/medi/medi.vfj"
+      ],
+      "host_free_tests": [
+        "test_operations.py"
+      ],
+      "run": "Use fontport_owned.py to export the copied native A/component closure to UFO and apply Recipe. Independently inspect reopened transformed points, components, guides, anchors and advances against the matrix; reset/zero intensity/disabled must equal the source. Compile the exported UFO externally with fontlab_fontport.export.compile_ttf when fontbuild dependencies are installed.",
+      "observe": "Real affine geometry changes, unchanged native source, no double-scaled bases, preserved metadata and no overwrite. Width/height are scalar advance projections; font kerning/metrics are retained, not automatically transformed. Recipe.save/load and inspectable script retain exact parameters.",
+      "open": "Stem/topology-preserving engines and live destructive multi-shape transforms are unavailable; no such label may be enabled by the UI."
+    },
+    {
+      "id": "P8-B09-designspace",
+      "issue_items": [
+        "Task3",
+        "P8",
+        "B09"
+      ],
+      "fixtures": [
+        "cc0/plum/plum-var.vfj"
+      ],
+      "host_free_tests": [
+        "test_designspace.py"
+      ],
+      "run": "fontport_owned.py snapshots actual axes, masters and instances through Designspace.from_native. Compare min/default/max/maps and each short-name keyed master/instance location with the native source panels. Inspect an external .designspace containing mapped axes and missing source files separately.",
+      "observe": "User/design coordinate mapping is correct on GetGo, all source identities and named instances match, reset returns defaults, arbitrary locations are always labelled instance, missing file is diagnostic and selection changes no native current master/data.",
+      "open": "Echopy sidecars and native flAxis setMap/design2user confirm map keys=design, values=user; the adapter now reverses pairs for fontTools. Actual GetGo mapped coordinates still need native comparison. Discrete, anisotropic and multi-axis mappings remain unavailable."
+    },
+    {
+      "id": "P8-B09-batch",
+      "issue_items": [
+        "Task3",
+        "P8",
+        "B09"
+      ],
+      "fixtures": [
+        "cc0/medi/medi.vfj"
+      ],
+      "host_free_tests": [
+        "test_operations.py",
+        "test_native_driver.py"
+      ],
+      "run": "BatchRunner executes INSIDE FontLab through persisted native state. After the native one-glyph UFO export, separate calls prepare/preflight, launch, process first success, poll progress, process one failure, poll, finish, inspect reopened geometry and launch/poll cancellation. Each attempt calls next(iterator) exactly once. Host-side native list_fonts polls occur between every batch call. Every run_python call and native poll must measure <4 s; timing and values are in result.json, artifact records in batch-results.json. No external batch subprocess is used.",
+      "observe": "Preflight catches missing/duplicate destinations before writes, no overwrite, per-attempt progress/success/failure, bounded 256 jobs, duplicate launch refusal, running reset after failure/cancel/iterator close and actual reopened transformed geometry. Interleaved successful native polls plus <4 s phase receipts prove cooperative between-file responsiveness for this small owned fixture and actual in-host execution. Cancellation happens at the next file boundary.",
+      "open": "This does not prove large single-font preemption, physical UI responsiveness during an individual file attempt, or the Fontlabapp scheduler/busy controls. A whole-font attempt remains synchronous and may exceed the deadline on larger inputs. Those acceptance items remain open; never run an arbitrary large corpus in one RPC. Partial output can remain after I/O failure.",
+      "driver": "native-drivers/batch_driver.py",
+      "driver_status": "host-free tested; native execution pending"
+    },
+    {
+      "id": "P9-artifacts",
+      "issue_items": [
+        "Task4",
+        "P9"
+      ],
+      "fixtures": [
+        "cc0/medi/medi.vfj",
+        "cc0/plum/plum-var.vfj"
+      ],
+      "host_free_tests": [
+        "entire test.sh suite"
+      ],
+      "run": "Build clean wheel/sdist, independently install both with real dependencies, run extracted tests without source checkout and repeat every supported native row above using installed paths. Record module paths, distribution hashes, licences, payload audit and imported dependency versions.",
+      "observe": "No local paths, work logs, native evidence, private assets or copied GetGo fonts in packages; imports remain host-free until explicit calls. Full issue checkboxes stay open until controller review/native acceptance.",
+      "open": "No commit, push, publication or issue-checkbox edits are authorized. Earlier hashes are historical; Round-4 no-route conclusion is refuted by Round 5. Rebuild/reinstall current artifacts before native acceptance."
+    },
+    {
+      "id": "R10-01-30.1",
+      "issue_items": [
+        "30.1"
+      ],
+      "status": "host-free source tested; native C4 pending",
+      "files": "testing.py; native-drivers/upstream_steps.py",
+      "run": "sh native-drivers/run-round10.sh --suite upstream",
+      "observe": "All 1797 IDs in each mode; run again with --native-attached. Exact reviewed parent IDs are separately counted HarnessExclusion/testing.nativeAttached.parents. Every capability named; point-level edits have no PenError; unknown failures remain failures. Round 13: fractional UPM is info.unitsPerEm.fractional; zero unclassified failures in attached mode.",
+      "fixtures": [
+        "cc0/medi/medi.vfj",
+        "cc0/plum/plum-var.vfj",
+        "apache/zotosans/zotosans-georgian.vfj (interchange)"
+      ]
+    },
+    {
+      "id": "R10-02-30.2",
+      "issue_items": [
+        "30.2"
+      ],
+      "status": "host-free source tested; native C4 pending",
+      "files": "docs/FONTPARTS-COVERAGE.md",
+      "run": "sh native-drivers/run-round10.sh --suite upstream",
+      "observe": "RoboFab checklist maps to exact passing upstream parity IDs; native limits and fixture surfaces remain visible.",
+      "fixtures": [
+        "cc0/medi/medi.vfj",
+        "cc0/plum/plum-var.vfj",
+        "apache/zotosans/zotosans-georgian.vfj (interchange)"
+      ]
+    },
+    {
+      "id": "R10-03-27.1",
+      "issue_items": [
+        "27.1"
+      ],
+      "status": "host-free source tested; native C4 pending",
+      "files": "live.py; live_objects.py; host.py; native-drivers/round10_glyph_steps.py",
+      "run": "sh native-drivers/run-round10.sh --suite glyph",
+      "observe": "Round 14 supersedes prior exact-single-row claims: first Undo MUST restore immutable MCP contour/point/component records. Geometry edits must change geometry before Undo; extra pre-change row is glyph.exactSingleUndo (one or two rows only). Glyph suite checks second Undo/first Redo no-op. Working shapes are cloned after baseline notification; preserve other layers/hints. Repeat static/variable, live pen and appendPoint paths. Raw geometry/hash receipts retained and geometry_equal=False fails independently of equal. Round 15 driver oracle: creation counts package history; later edits count glyph history. Root lastModified is ignored by name with raw timestamps retained. Interchange allows only empty/absent notes and numeric representation differences; real outline/metric changes fail.",
+      "fixtures": [
+        "cc0/medi/medi.vfj",
+        "cc0/plum/plum-var.vfj",
+        "apache/zotosans/zotosans-georgian.vfj (interchange)"
+      ]
+    },
+    {
+      "id": "R10-04-27.6",
+      "issue_items": [
+        "27.6"
+      ],
+      "status": "host-free source tested; native C4 pending",
+      "files": "world.py; deploy.py; examples/fontparts; native-drivers/round10_world_steps.py",
+      "run": "sh native-drivers/run-round10.sh --suite world",
+      "observe": "Activate the owned fixture and pass it explicitly to all 19 examples. Unexpected thrown example refusal fails the suite. Native layer/guide refusal examples check exact names; >=15 real edits. Restore registrations and close owned documents.",
+      "fixtures": [
+        "cc0/medi/medi.vfj",
+        "cc0/plum/plum-var.vfj",
+        "apache/zotosans/zotosans-georgian.vfj (interchange)"
+      ]
+    },
+    {
+      "id": "R10-05-27.4",
+      "issue_items": [
+        "27.4"
+      ],
+      "status": "host-free source tested; native C4 pending",
+      "files": "interchange.py; native-drivers/round10_interchange_steps.py",
+      "run": "sh native-drivers/run-round10.sh --suite interchange",
+      "observe": "Repeat Latin/static, variable and non-Latin: whole-UFO export and native supported single-layer import compare digests/metadata and reopen VFJ. Named losses/refusals are retained, not full variable/guide support. Round 13: Medio OS/2 integer subclasses import; Georgian large replies use size-framed 8 KiB chunks, including metadata. Round 15 driver oracle: creation counts package history; later edits count glyph history. Root lastModified is ignored by name with raw timestamps retained. Interchange allows only empty/absent notes and numeric representation differences; real outline/metric changes fail.",
+      "fixtures": [
+        "cc0/medi/medi.vfj",
+        "cc0/plum/plum-var.vfj",
+        "apache/zotosans/zotosans-georgian.vfj (interchange)"
+      ]
+    },
+    {
+      "id": "R10-06-27.2-27.3",
+      "issue_items": [
+        "27.2-27.3"
+      ],
+      "status": "host-free source tested; native C4 pending",
+      "files": "recipes.py; native-drivers/round10_pen_steps.py",
+      "run": "sh native-drivers/run-round10.sh --suite pens",
+      "observe": "Round 14 supersedes prior exact-single-row claims: first Undo MUST restore immutable MCP contour/point/component records. Geometry edits must change geometry before Undo; extra pre-change row is glyph.exactSingleUndo (one or two rows only). Glyph suite checks second Undo/first Redo no-op. Working shapes are cloned after baseline notification; preserve other layers/hints. Repeat static/variable, live pen and appendPoint paths. Raw geometry/hash receipts retained and geometry_equal=False fails independently of equal.",
+      "fixtures": [
+        "cc0/medi/medi.vfj",
+        "cc0/plum/plum-var.vfj",
+        "apache/zotosans/zotosans-georgian.vfj (interchange)"
+      ]
+    },
+    {
+      "id": "R10-07-30.3",
+      "issue_items": [
+        "30.3"
+      ],
+      "status": "host-free source tested; native C4 pending",
+      "files": "capabilities.py; docs/NATIVE-BOUNDARIES.md",
+      "run": "sh native-drivers/run-round10.sh --suite boundaries",
+      "observe": "glyph.externalChangeNotifications.supported is false; App can show Reload required. No native auto-invalidation claimed.",
+      "fixtures": [
+        "cc0/medi/medi.vfj",
+        "cc0/plum/plum-var.vfj",
+        "apache/zotosans/zotosans-georgian.vfj (interchange)"
+      ]
+    },
+    {
+      "id": "R10-08-30.4",
+      "issue_items": [
+        "30.4"
+      ],
+      "status": "host-free source tested; native C4 pending",
+      "files": "host.py; native_kerning.py; native-drivers/round10_boundary_steps.py",
+      "run": "sh native-drivers/run-round10.sh --suite boundaries",
+      "observe": "Fractional anchors and changing fractional kerning must refuse before writes/checkpoints; verify unchanged payload/history.",
+      "fixtures": [
+        "cc0/medi/medi.vfj",
+        "cc0/plum/plum-var.vfj",
+        "apache/zotosans/zotosans-georgian.vfj (interchange)"
+      ]
+    },
+    {
+      "id": "R10-09-31.6-31.1",
+      "issue_items": [
+        "31.6-31.1"
+      ],
+      "status": "host-free source tested; native C4 pending",
+      "files": "capabilities.py; native-drivers/round10_boundary_steps.py",
+      "run": "sh native-drivers/run-round10.sh --suite boundaries",
+      "observe": "D18 default editing remains. Panose/OS2 weight/width master-backed writes must create history and survive Undo/Redo/VFJ. Name-record changing write must refuse info.openTypeNameRecords.persistence with unchanged values/history. Stem routes and strict boundary probes retain native checks. Round 14: structured capabilities advertise bound=key-master for Panose/weight/width/stems. Both-sided fixture uses a fresh owned glyph, not A; overlapping UFO kerning memberships refuse groups.multiMembership before writes/history.",
+      "fixtures": [
+        "cc0/medi/medi.vfj",
+        "cc0/plum/plum-var.vfj",
+        "apache/zotosans/zotosans-georgian.vfj (interchange)"
+      ]
+    },
+    {
+      "id": "R10-10-27.7",
+      "issue_items": [
+        "27.7"
+      ],
+      "status": "host-free source tested; native C4 pending",
+      "files": "errors.py; lifetime.py; live_objects.py; native-drivers/round10_lifecycle_steps.py",
+      "run": "sh native-drivers/run-round10.sh --suite lifecycle",
+      "observe": "External close of owned document makes all public cached handles raise StaleObjectError; explicit path save/reopen identity; no user fonts touched.",
+      "fixtures": [
+        "cc0/medi/medi.vfj",
+        "cc0/plum/plum-var.vfj",
+        "apache/zotosans/zotosans-georgian.vfj (interchange)"
+      ]
+    }
+  ],
+  "driver_mode": "Host-side CLI, not a run_native.py fixture; timestamped outputs default to ignored .local/native-issue105/",
+  "phase_budget_seconds": 4,
+  "native_timing_status": "not run; actual per-phase timing is required and a phase >=4 s fails acceptance",
+  "b08_command_from_workspace": "rtk proxy verification/issue-104/fl-native.sh --mutating --lane issue105-x3 -- uv run --project fontlab-remopy python .worktrees/issue-105-fontport/native-drivers/fontport_owned.py --extra-source fontlab-glyport/src --features-only"
+}
