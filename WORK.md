@@ -2,6 +2,59 @@
 this_file: WORK.md
 ---
 
+## 2026-11-17 — Guarded installer final source gate (Task40)
+
+The unchanged complete hook passes on arm64 Python 3.11: 5,150 Fontport tests,
+two existing optional skips and 63 warnings (15.61s); 872 Pens tests (1.72s),
+95.22% Pens coverage, and 95.51% combined coverage of complete `live.py`.
+Expanded Ruff (`src tests examples Scripts`) passes. All 37 hash-locked Python
+3.13 documentation tests pass (11.159s).
+
+The initial hook exposed the pinned Pens installer's parity mismatch; the exact
+reviewed six-file Pens successor resolves it without runtime changes. The local
+SIM118 explanation preserves FontParts name iteration, test imports are sorted,
+and the documentation index includes the existing README installer paragraph.
+The runtime AST and every existing oracle remain unchanged. Initial failures
+and final commands/results are retained in the Task40 evidence.
+
+This supersedes the earlier source-only qualification status below. The final
+Fontport candidate has nine authored paths after the authorized gate repairs.
+Controller graph and independent review precede delivery. No installer/native
+operation or owner-folder installation ran. Exact-SHA CI, release, installed,
+Windows/native, owner recovery, standalone Fly/Aidus and existing holds remain.
+
+## 2026-11-17 — Fontport installer contract successor (Task29)
+
+Updated only the sdist test's stale FLM header and added the common canonical
+SHA-256 assertion. The exact installer remains unchanged. In a complete isolated
+clone, the normal full package-boundary module first reproduced one old-header
+failure with nine passes, then passed all ten cases after the fix (0.55s).
+Both runs built a genuine sdist and read its payload without running it. The
+canonical fallback was a plaintext stub from the qualified Instamix Git object,
+not an installed package. Test tooling was pytest-only on arm64 Python 3.11.
+
+This uncommitted six-file source successor supersedes the earlier five-file
+Fontport candidate; its exact delta and preservation receipts are in Task29.
+Independent review, combined cohort/hooks, exact-SHA CI/release, installed and
+native acceptance remain open. Owner recovery, Aidus/Fly, private Pages and
+Issue 123 holds remain unchanged. No installer/provider/native operation ran.
+
+## 2026-11-17 — Guarded common installer source candidate
+
+Copied the exact canonical common template shipped with Instamix 1.0.11.
+Provider reuse now requires migration/rollback capabilities and entry context is
+checked before bootstrap. Legacy rollback requires 1.0.9 or newer; the entry
+guard originated in 1.0.10, and shared-layout venv reuse requires 1.0.11.
+No package metadata, dependency floors, scripts, bundles or licences changed.
+This supersedes earlier shared-installer source notes; historical checks retain
+their dated scope.
+
+Compile/AST and exact-template byte checks qualify source only. No installer,
+provider, readiness harness, test, package build or native operation ran.
+Consumer execution, owner recovery and delivery remain held. Required broad
+cohort/suite, release, installed and Windows/native gates remain open.
+
+
 ## 2026-11-15 — Shared installer source alignment
 
 Copied the reviewed shared installer exactly: dependency constraints and managed origins remain protected; inactive conditional dependencies are filtered before sibling execution in the resolver target Python. FontLab imports remain standard-library-only. Package identity, runtime APIs, dependency declarations, scripts, bundles and legal files are unchanged. Existing source-archive installer selection is retained.

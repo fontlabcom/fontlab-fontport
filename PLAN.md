@@ -2,6 +2,35 @@
 this_file: PLAN.md
 ---
 
+## Guarded installer: remaining final qualification (Task40)
+
+The complete Fontport/Pens source hook, expanded lint and 37 locked documentation
+tests are qualified with the reviewed Pens successor. Preserve the recorded
+initial failures and the nine-path candidate's unchanged runtime AST/oracles.
+Complete current graph analysis and independent review before fresh-main
+reconciliation and ordinary delivery/CI/release gates. Retain actual artifact,
+installed/native/Windows, owner-recovery and coherent consumer acceptance;
+standalone Fly, Aidus, private Pages and Issue 123 holds are unchanged.
+
+## Fontport contract successor: remaining qualification (Task29)
+
+Independently review the uncommitted six-file successor, including the minimal
+sdist header/hash contract repair and preserved installer/metadata assertions.
+The normal package-boundary module is qualified (ten passed); this does not
+qualify the complete package/cohort, ordinary hooks, CI, release, installation
+or native behavior. Reconcile fresh main only after the existing admission and
+owner-recovery gates permit delivery. Retain Task26's vfpy, skipped-large-file,
+flow-cap and UNKNOWN pytest-discovery limits and every prior backlog/hold.
+
+## Guarded common installer: remaining qualification
+
+Independently review the canonical 1.0.11 template propagation and static oracle
+updates. After explicit admission, qualify the complete consumer cohort and
+ordinary hook/CI/artifact gates in a full checkout. Current sparse static checks
+do not qualify runtime, installation or native behavior. Consumer execution,
+owner recovery and delivery remain held; retain existing backlog and pauses.
+
+
 ## Functional work order — 2026-11-14
 
 Prioritize usable UFO feature editing and batch-recipe interchange while preserving exact source text and input/output refusal rules. Keep Fontport data adapters separate from App UI and reconcile Fly, App and Scriptmix consumers with the same provider behavior.

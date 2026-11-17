@@ -2,6 +2,7 @@
 """Only native guards and the deprecated feature shim may lazily import App."""
 
 import ast
+import hashlib
 import subprocess
 import tarfile
 import tomllib
@@ -11,6 +12,7 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
+STUB_SHA256 = "bdb98c7c23f9904e5f4c59332b0bbd8723f18e33c7bbfea1c526c9b0b0b9cb50"
 
 
 def canonical_stub() -> bytes | None:
@@ -143,7 +145,8 @@ def test_sdist_when_built_then_installer_is_the_instamix_stub(tmp_path):
             (project / name).write_bytes(payload)
     installer = (project / "install.vfpy").read_text(encoding="utf-8")
     assert installer == (ROOT / "install.vfpy").read_text(encoding="utf-8")
-    assert installer.startswith("#FLM: Install this package into FontLab (fontlab-instamix)\n")
+    assert installer.startswith("#FLM: Install into FontLab with fontlab-instamix\n")
+    assert hashlib.sha256(installer.encode("utf-8")).hexdigest() == STUB_SHA256
     assert "bootstrap.install_project(__file__)" in installer, "stub must hand off to instamix"
     canonical = canonical_stub()
     if canonical is not None:

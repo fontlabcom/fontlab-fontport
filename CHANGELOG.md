@@ -2,6 +2,49 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-17 — Guarded installer source qualification (Task40)
+
+- The complete normal source hook passes: 5,150 Fontport tests, two existing
+  optional skips and 63 retained warnings; 872 required Pens tests pass with
+  95.22% coverage. The complete changed `live.py` module reaches 95.51% combined
+  statement/branch coverage against the unchanged 80% gate.
+- Retained name iteration in the glyph-summary fallback with a local lint
+  explanation, sorted its regression imports, and restored the existing README
+  installer paragraph in the documentation index. Expanded Ruff and all 37
+  hash-locked Python 3.13 documentation tests pass; runtime AST is unchanged.
+- Initial Pens parity, lint and documentation-source failures remain recorded.
+  The final source cohort uses the reviewed Pens installer/oracle successor.
+  Graph/review, delivery/CI/release, installed/native/Windows and owner recovery
+  remain separate; standalone Fly, Aidus, private Pages and paused-work holds remain.
+
+## 2026-11-17 — Fontport installer contract source fix (Task29)
+
+- The sdist contract now requires the current canonical FLM header and exact
+  stub SHA-256, preserving byte parity, Instamix handoff, canonical fallback,
+  archive identity, version and installer table checks.
+- The normal complete boundary module reproduced the stale-header failure
+  (one failed, nine passed) and then passed ten tests in 0.55s. Two genuine
+  sdists were read without executing their installer or installing a consumer.
+- This is an uncommitted six-file source successor only. Independent review,
+  full cohort/hook, delivery, release, installed and native checks remain open;
+  existing owner-recovery, Aidus/Fly, private Pages and paused-work holds remain.
+
+## 2026-11-17 — Guarded common installer source candidate
+
+Copied the exact canonical common template shipped with Instamix 1.0.11.
+Provider reuse now requires migration/rollback capabilities and entry context is
+checked before bootstrap. Legacy rollback requires 1.0.9 or newer; the entry
+guard originated in 1.0.10, and shared-layout venv reuse requires 1.0.11.
+No package metadata, dependency floors, scripts, bundles or licences changed.
+This supersedes earlier shared-installer source notes; historical checks retain
+their dated scope.
+
+Compile/AST and exact-template byte checks qualify source only. No installer,
+provider, readiness harness, test, package build or native operation ran.
+Consumer execution, owner recovery and delivery remain held. Required broad
+cohort/suite, release, installed and Windows/native gates remain open.
+
+
 ## 1.2.12 (2026-11-16)
 
 - `install.vfpy` is now the short fontlab-instamix stub. It installs

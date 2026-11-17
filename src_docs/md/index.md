@@ -14,6 +14,14 @@ replacing their namespaces or registering a world on import. Native imports are 
 
 ## Install
 
+To install into FontLab 9, open `install.vfpy` from a checkout in FontLab
+(double-click it or drop it onto FontLab), then restart FontLab. The file is a
+short stub that hands the work to
+[fontlab-instamix](https://github.com/fontlabcom/fontlab-python-instamix); if
+instamix is not installed yet, the stub installs it from PyPI first. Instamix
+installs the package into FontLab's own `site-packages` and records the install
+under the extension id `com.fontlab.fontport`.
+
 FontLab supplies `fontlab`, `fontgate`, `fontpr` and PythonQt. It needs Python
 packages built for its own Python 3.11 arm64 runtime. The owner manages editable
 installs into FontLab; do not run host install/uninstall commands yourself. Canonical editable sources may differ from this worktree.

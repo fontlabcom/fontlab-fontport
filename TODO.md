@@ -2,6 +2,21 @@
 this_file: TODO.md
 ---
 
+## Guarded installer final qualification (Task40)
+
+- [ ] Independently review the nine-path Fontport successor, exact reviewed Pens peer delta, final complete source-hook/lint/locked-docs evidence and current graph analysis before delivery.
+- [ ] Qualify fresh-main delivery, exact-SHA CI/release/artifacts and actual installed/native/Windows behavior after the applicable admission; retain owner recovery, standalone Fly/Aidus, private Pages and paused-work holds.
+
+## Fontport contract successor (Task29)
+
+- [ ] Independently review the uncommitted six-file Fontport successor and its RED/GREEN boundary-module/archive preservation evidence; retain complete cohort/hooks, delivery, release, installed/native, owner-recovery and Aidus/Fly holds.
+
+## Guarded common installer
+
+- [ ] Independently review the canonical 1.0.11 common-template source candidate and preserved metadata/archive/licence contracts.
+- [ ] After the existing holds are lifted, qualify the full checkout/cohort, ordinary hooks, exact-SHA CI/artifacts and installed/native/Windows behavior; no consumer execution or delivery is admitted by static checks.
+
+
 ## Shared installer qualification — 2026-11-15
 
 - [ ] Live-check `glyph_summaries` unicodes (layer target) against package-level unicodes in FontLab 9, and TMetrics speed with the released fontport installed.

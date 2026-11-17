@@ -2,6 +2,7 @@
 """Direct glyph lookups and bulk summaries agree with full per-glyph reads."""
 
 import pytest
+from test_live import Backend
 from ufoLib2 import Font
 
 from fontlab_fontport.errors import StaleObjectError
@@ -9,8 +10,6 @@ from fontlab_fontport.glyphrun import layout_text
 from fontlab_fontport.groups import _text
 from fontlab_fontport.live import RFont
 from fontlab_fontport.memory import UFOBackend
-
-from test_live import Backend
 
 
 def ufo_font():

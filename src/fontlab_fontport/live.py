@@ -658,7 +658,7 @@ class RFont(AdapterIdentity, _Unsupported, BaseFont):
         if callable(method):
             return tuple((n, tuple(u), w) for n, u, w in method(name))
         target = self.getLayer(name)
-        return tuple((n, tuple(target[n].unicodes), target[n].width) for n in target.keys())
+        return tuple((n, tuple(target[n].unicodes), target[n].width) for n in target.keys())  # noqa: SIM118 - RLayer iteration yields glyph objects.
 
     def capabilities(self):
         """Return backend capability evidence without requiring a live document."""
