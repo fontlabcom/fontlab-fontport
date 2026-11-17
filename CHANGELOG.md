@@ -2,6 +2,13 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-17 — Installer stub from instamix 1.0.15 (Issue 259 follow-ups)
+
+- `install.vfpy` is now the stub from fontlab-python-instamix 1.0.15. It replaces an
+  installed instamix older than 1.0.13 and puts the old copy back if the upgrade
+  fails; linked checkouts and local builds are kept. A download that fails for
+  lack of root certificates (FontLab 9 for macOS) is retried with the system curl.
+
 ## 2026-11-17 — Task-list cleanup (Issue 258)
 
 - Installer-chain rows (Task40 review, Task29 sdist contract, guarded common installer, shared-installer delivery, sdist installer fix, false-marker sibling staging) are closed. Evidence: `install.vfpy` is the fontlab-instamix stub since 1.2.12 (this file, 1.2.12 entry); the sdist installer fix reached main `517a7e06626dc49f93f2a9ab6767d0a23f127d00` with CI 43658462711; `3db99b4` (guarded installer refresh) passed CI 44067859935; v1.2.13 and v1.2.14 are tagged and released (v1.2.14 latest, 2026-11-17).
