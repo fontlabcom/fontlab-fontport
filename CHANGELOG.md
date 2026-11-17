@@ -2,6 +2,12 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-17 — Task-list cleanup (Issue 258)
+
+- Installer-chain rows (Task40 review, Task29 sdist contract, guarded common installer, shared-installer delivery, sdist installer fix, false-marker sibling staging) are closed. Evidence: `install.vfpy` is the fontlab-instamix stub since 1.2.12 (this file, 1.2.12 entry); the sdist installer fix reached main `517a7e06626dc49f93f2a9ab6767d0a23f127d00` with CI 43658462711; `3db99b4` (guarded installer refresh) passed CI 44067859935; v1.2.13 and v1.2.14 are tagged and released (v1.2.14 latest, 2026-11-17).
+- The Release workflow run 44068119420 at `d441162` failed (trusted publisher not registered for PyPI); recorded in the Issue 256 publisher list, not a source defect.
+- Fix-PR wording for Proteus/FontGate/pyfontgate rows removed; defects are tracked as fl#8633, fl#8638, fl#8639, fl#8640 (issues only). Test and qualification rows moved to the end of TODO.md.
+
 ## 2026-11-17 — Guarded installer source qualification (Task40)
 
 - The complete normal source hook passes: 5,150 Fontport tests, two existing

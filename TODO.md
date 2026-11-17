@@ -2,45 +2,21 @@
 this_file: TODO.md
 ---
 
-## Guarded installer final qualification (Task40)
+## Next steps (prioritised, 2026-11-17)
 
-- [ ] Independently review the nine-path Fontport successor, exact reviewed Pens peer delta, final complete source-hook/lint/locked-docs evidence and current graph analysis before delivery.
-- [ ] Qualify fresh-main delivery, exact-SHA CI/release/artifacts and actual installed/native/Windows behavior after the applicable admission; retain owner recovery, standalone Fly/Aidus, private Pages and paused-work holds.
-
-## Fontport contract successor (Task29)
-
-- [ ] Independently review the uncommitted six-file Fontport successor and its RED/GREEN boundary-module/archive preservation evidence; retain complete cohort/hooks, delivery, release, installed/native, owner-recovery and Aidus/Fly holds.
-
-## Guarded common installer
-
-- [ ] Independently review the canonical 1.0.11 common-template source candidate and preserved metadata/archive/licence contracts.
-- [ ] After the existing holds are lifted, qualify the full checkout/cohort, ordinary hooks, exact-SHA CI/artifacts and installed/native/Windows behavior; no consumer execution or delivery is admitted by static checks.
-
-
-## Shared installer qualification — 2026-11-15
+1. P0 live FontLab 9: check `glyph_summaries` unicodes and TMetrics speed with released v1.2.14 installed.
+2. P0 reconcile UFO feature and batch-recipe behaviour across Fontport, App and Scriptmix (source only).
+3. P1 qualify released Fly/Fontport scripts natively (Issue 255); the three Scripts demo report windows.
+4. P1 reconcile the Issue 207 candidate; verify the pens floor `>=1.0.0` on every install route.
+5. P2 native rows tracked in fl issues: fl#8633 (stem-snap Undo/Redo), fl#8638 (Round coordinates on fgShape to flShape), fl#8640 (kerning Undo rounds every master), fl#8639.
+6. Test and qualification rows are at the end, deprioritised (owner: functional progress first).
 
 - [ ] Live-check `glyph_summaries` unicodes (layer target) against package-level unicodes in FontLab 9, and TMetrics speed with the released fontport installed.
-- [ ] Review and deliver the shared-installer candidate through fresh-main reconciliation, required gates, exact-SHA CI and genuine release/download qualification.
-- [ ] After admission, verify installed provider/consumer identity and the applicable Script/Extension/native workflows without clearing existing holds by inference.
-
-
-
-- [ ] Independently review and deliver the sdist installer input fix, then qualify the actual v1.2.10 release payload; retain complete cohort propagation, release, root-installer observation, installed-provider and native checks.
-- [ ] Propagate a separately reviewed reference repair for false-marker local sibling staging; the current template can stage a present non-active sibling before uv skips its false marker.
-
-
-
 
 - [ ] Reconcile UFO feature and batch-recipe behavior across Fontport, App and Scriptmix with focused source/preservation checks before the detailed artifact and native/history pass.
 
 - [ ] Native (open question only): whether `flPackage.kerning(<non-current master>)` accepts writes with working Undo/Redo and reopen. Fontport writes only the default master, so this bounds any future per-master kerning target. Upstream: fl#8640 (Undo rounds fractional kerning on other masters) and fl#8639 (reopen rounding); see `reports/a2-live-report-39.md`.
 - [ ] D18-2 owner-run: the live readback of the eight vertical metrics passed (A2 report 21); compare the values with the Font Info dialog (expected Typo 765/-235/200, hhea 965/-235/0, win 965/235) and decide whether export/`set_info` should cover these read-only fields (currently read-only, not exported).
-- [ ] Qualify whole-current-App and default-resolution behavior plus final ordinary distributions for the delivered lint-repair cohort; retain existing native, adoption, canonical and publication gates.
-
-- [ ] Complete #17 P2 post-change graph, exact ledger/source qualification and staged review; refresh actual main, reconcile intervening changes, qualify genuine-commit docs, then verify normal hooked main delivery, exact-commit CI and generated-output lineage.
-- [ ] Qualify #17 P2 matching ordinary artifacts, two fresh prefixes and archives, then its actual consumer/native/history/Undo/Redo/reopen checks; retain recipe-only No Font, complete input/output preservation, distinct cleanup ACKs and actual terminal worker cleanup. Keep wider literal-U+2029 feature editing, canonical adoption, publication and private Pages holds as separate workflow gates.
-
-- [ ] Qualify matching ordinary artifacts and owned native/history/reopen checks for the source-qualified combined-main exact UFO feature-source integration; full literal paragraph-separator editing remains separate.
 
 # Open tasks
 
@@ -52,12 +28,10 @@ this_file: TODO.md
 
 - [ ] Packaging floor: fontport b097603 and later imports `FONTGATE_NODE_TYPES` from `fontlab_pens`, first exported in pens v1.0.0 (d8cdd7e). The declared `fontlab-python-pens>=1.0.0` covers it, but FontLab installs that resolve an older pens (on 2026-11-11 the FontLab site-packages held pens 0.1.0 metadata) fail with ImportError; make the installer enforce the floor and install pens together with fontport, then verify in FontLab. Diagnosis 2026-11-12: `install.vfpy` already installs a `fontlab-python-pens` checkout found beside fontport (`install_siblings`) and sends other requirements to `uv pip install`, which enforces `>=1.0.0`. The gap is the sibling route: `install_siblings` runs the sibling installer without comparing its pyproject version to the requirement, and the no-uv fallback `missing()` checks presence only, so an old pens checkout or an old installed pens passes. Fixing it changes the byte-identical shared `install.vfpy` (seven copies, `tools/check_install_copies.py`), so it is a feature change owned by the install.vfpy propagation queue: land it in App first, then propagate; do not edit this copy alone.
 - [ ] Qualify the isolated Task6c staged PNG/color transaction with full current source/ordinary package/zip, fault/lifetime and independent review before unrelated production work.
-- [ ] Complete full ImageSet/DataSet collection and native resource parity; checked detached PNG data success does not close those obligations. For a reproduced upstream blocker, file or extend a privacy-safe fl issue and link a required fix PR in the proven responsible Proteus, FontGate or pyfontgate repository.
+- [ ] Complete full ImageSet/DataSet collection and native resource parity; checked detached PNG data success does not close those obligations. For a reproduced upstream blocker, track the upstream defect in a privacy-safe fl issue (issues only, no pull requests).
 
 - [ ] Reconcile the Issue 207 candidate with the current DesignSpace/UFO/fontParts boundary; preserve all host data and origin guards.
 - [ ] Qualify native object lifetime, full-font history, Undo/Redo, failure paths and saved/reopened artifacts through matching installed consumers.
-- [ ] Run the exact repository checks on the integrated source, obtain independent review, commit/push the scoped milestone and verify its remote head.
-- [ ] After qualified main integration, inventory obsolete branches/files, preserve unique work and remove only proven stale items with recovery evidence.
 
 - [ ] Qualify F1 I1 native keys enumeration preservation and whole-font read timing; source tests reject either duplicate ordering, but each lookup scans all glyph names.
 
@@ -91,12 +65,20 @@ this_file: TODO.md
 
 - [ ] Complete applicable native whole-font/history/round-trip and cohort-version acceptance.
 
-- [ ] Review the complete catalogue/source-doc relocation and qualify source X plus a rebuild at its actual epoch through normal main Actions.
-- [ ] Verify immutable generated Y and retain all private Pages operation holds and separate native/owner-install gates.
-
 - [ ] Qualify the three Scripts demo report windows in FontLab using the installed Fly/App reporting API; preserve open-document state.
 - [ ] Pen writes can round fractional coordinates: `host._stage_shapes` (src/fontlab_fontport/host.py:431) converts fgShape to flShape with `assign`, and FontLab applies "Round coordinates" from app-wide state that follows neither the target nor the current font (fontlab/fl#8638). Example: 10.4/410.6 is stored as 10/411 in a font whose setting is off. Next check: once FontLab fixes this, or after a Fontport change that writes node positions directly (`flNode.position` kept fractions in every run), read back seeded fractions in on and off fonts after switching fonts.
 - [ ] Live r31 rerun: confirm that the owned-host drivers' tolerant comparison (`values_close`, `READBACK_ATOL` 1e-3 in `tests/native_drivers/round10_payloads.py`) passes a real Redo read-back (float32, 10.4 -> 10.3999996) and still flags a real 0.1 change.
 - [ ] Native (F47-1, owner): on a fresh copy of the plum font with Light as the current master, confirm the Fontport kerning write text names the default master (Regular) instead of asking to make Light current (App `kerning.py` lines 47-58).
 - [ ] Native (Issue 254, owner): after the App `install.vfpy` (main at or after 5cac0d6), install Fontport and confirm the pens floor `>=1.0.0` holds on every install route (see row 21).
 - [ ] Licence audit (Issue 250, owner Q5): `pyproject.toml` and `LICENSE` are already Apache-2.0 and the only two SPDX headers read Apache-2.0. Nothing is known to remain; verify README/NOTICE wording carries no MIT/older-licence claim for FontLab-authored code, then close this row.
+
+## Deprioritised qualification and test-infrastructure rows
+
+- [ ] Qualify whole-current-App and default-resolution behavior plus final ordinary distributions for the delivered lint-repair cohort; retain existing native, adoption, canonical and publication gates.
+- [ ] Complete #17 P2 post-change graph, exact ledger/source qualification and staged review; refresh actual main, reconcile intervening changes, qualify genuine-commit docs, then verify normal hooked main delivery, exact-commit CI and generated-output lineage.
+- [ ] Qualify #17 P2 matching ordinary artifacts, two fresh prefixes and archives, then its actual consumer/native/history/Undo/Redo/reopen checks; retain recipe-only No Font, complete input/output preservation, distinct cleanup ACKs and actual terminal worker cleanup. Keep wider literal-U+2029 feature editing, canonical adoption, publication and private Pages holds as separate workflow gates.
+- [ ] Qualify matching ordinary artifacts and owned native/history/reopen checks for the source-qualified combined-main exact UFO feature-source integration; full literal paragraph-separator editing remains separate.
+- [ ] Run the exact repository checks on the integrated source, obtain independent review, commit/push the scoped milestone and verify its remote head.
+- [ ] After qualified main integration, inventory obsolete branches/files, preserve unique work and remove only proven stale items with recovery evidence.
+- [ ] Review the complete catalogue/source-doc relocation and qualify source X plus a rebuild at its actual epoch through normal main Actions.
+- [ ] Verify immutable generated Y and retain all private Pages operation holds and separate native/owner-install gates.
