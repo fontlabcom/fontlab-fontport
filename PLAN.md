@@ -2,6 +2,12 @@
 this_file: PLAN.md
 ---
 
+## Functional work order — 2026-11-14
+
+Prioritize usable UFO feature editing and batch-recipe interchange while preserving exact source text and input/output refusal rules. Keep Fontport data adapters separate from App UI and reconcile Fly, App and Scriptmix consumers with the same provider behavior.
+
+Use small smoke checks and focused regressions for changed behavior and package boundaries. Keep the existing detailed acceptance tasks for a later testing pass; mandatory delivery hooks and current holds remain in force.
+
 ## Shared installer: remaining delivery qualification — 2026-11-15
 
 Review the exact shared-installer candidate against fresh main, run the required combined package gates, and qualify genuine release/archive/download inputs. Preserve the existing package-specific dependency and distribution contracts. Then qualify the coherent provider/consumer and Script/Extension cohort through the admitted root installer and native lane; source checks do not establish those outcomes. Keep every existing ownership, native, publication and paused-work limit.

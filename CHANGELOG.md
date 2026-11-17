@@ -9,6 +9,10 @@ this_file: CHANGELOG.md
   its `[tool.fontlab-install]` table. The large legacy installer is gone.
 - `tests/test_package_boundaries.py`: the sdist test checks the stub instead of the legacy installer's version handling.
 - README describes the stub install.
+## 2026-11-14 — Functional work order documented
+
+- Added the owner's functional-progress-first guidance and repository-specific priorities, including cross-package compatibility and a later detailed testing pass. Existing mandatory hooks, holds and unfinished work remain in force.
+- This change updates guidance and planning only; it establishes no new runtime, installed, native or release result.
 
 ## 2026-11-16 — Fast glyph reads for live fonts
 

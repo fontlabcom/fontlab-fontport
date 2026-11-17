@@ -74,6 +74,12 @@ normal hooked delivery and exact-commit CI; no native or install claim.
 
 # Current round — Issue 255 post-release reconciliation
 
+## 2026-11-14 — Functional work order documented
+
+Updated AGENTS, PLAN and TODO to prioritize useful functional changes and compatible package boundaries, with detailed testing deferred. Existing backlog and prior records are retained. Documentation preservation and policy consistency were checked; no runtime, installed or native checks ran in this documentation-only pass.
+
+Next: reconcile UFO feature and batch-recipe behavior across Fontport, App and Scriptmix with focused source/preservation checks before the detailed artifact and native/history pass.
+
 [fontlab-fontport v1.2.9](https://github.com/fontlabcom/fontlab-fontport/releases/tag/v1.2.9) is qualified at `a11cbe2340201ec07d81c95dd567981cdef81d12`.
 
 The three Scripts, seven examples and generated startup/recipe teaching use Fly. The UI tombstone teaches fly.ap.fontui with unchanged runtime ownership/error behavior.

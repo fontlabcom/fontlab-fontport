@@ -16,6 +16,8 @@ this_file: TODO.md
 
 
 
+- [ ] Reconcile UFO feature and batch-recipe behavior across Fontport, App and Scriptmix with focused source/preservation checks before the detailed artifact and native/history pass.
+
 - [ ] Native (open question only): whether `flPackage.kerning(<non-current master>)` accepts writes with working Undo/Redo and reopen. Fontport writes only the default master, so this bounds any future per-master kerning target. Upstream: fl#8640 (Undo rounds fractional kerning on other masters) and fl#8639 (reopen rounding); see `reports/a2-live-report-39.md`.
 - [ ] D18-2 owner-run: the live readback of the eight vertical metrics passed (A2 report 21); compare the values with the Font Info dialog (expected Typo 765/-235/200, hhea 965/-235/0, win 965/235) and decide whether export/`set_info` should cover these read-only fields (currently read-only, not exported).
 - [ ] Qualify whole-current-App and default-resolution behavior plus final ordinary distributions for the delivered lint-repair cohort; retain existing native, adoption, canonical and publication gates.
