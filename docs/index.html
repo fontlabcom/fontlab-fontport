@@ -1021,6 +1021,13 @@ and DesignSpace support. It has no UI. Host use requires Python 3.11 arm64; exte
 <p>It uses real fontParts, defcon, fontPens, fontTools and ufoLib2 packages without
 replacing their namespaces or registering a world on import. Native imports are lazy; TypeRig is not required.</p>
 <h2 id="install">Install</h2>
+<p>To install into FontLab 9, open <code>install.vfpy</code> from a checkout in FontLab
+(double-click it or drop it onto FontLab), then restart FontLab. The file is a
+short stub that hands the work to
+<a href="https://github.com/fontlabcom/fontlab-python-instamix">fontlab-instamix</a>; if
+instamix is not installed yet, the stub installs it from PyPI first. Instamix
+installs the package into FontLab's own <code>site-packages</code> and records the install
+under the extension id <code>com.fontlab.fontport</code>.</p>
 <p>FontLab supplies <code>fontlab</code>, <code>fontgate</code>, <code>fontpr</code> and PythonQt. It needs Python
 packages built for its own Python 3.11 arm64 runtime. The owner manages editable
 installs into FontLab; do not run host install/uninstall commands yourself. Canonical editable sources may differ from this worktree.</p>
