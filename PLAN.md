@@ -2,57 +2,11 @@
 this_file: PLAN.md
 ---
 
-## Guarded installer: remaining final qualification (Task40)
-
-The complete Fontport/Pens source hook, expanded lint and 37 locked documentation
-tests are qualified with the reviewed Pens successor. Preserve the recorded
-initial failures and the nine-path candidate's unchanged runtime AST/oracles.
-Complete current graph analysis and independent review before fresh-main
-reconciliation and ordinary delivery/CI/release gates. Retain actual artifact,
-installed/native/Windows, owner-recovery and coherent consumer acceptance;
-standalone Fly, Aidus, private Pages and Issue 123 holds are unchanged.
-
-## Fontport contract successor: remaining qualification (Task29)
-
-Independently review the uncommitted six-file successor, including the minimal
-sdist header/hash contract repair and preserved installer/metadata assertions.
-The normal package-boundary module is qualified (ten passed); this does not
-qualify the complete package/cohort, ordinary hooks, CI, release, installation
-or native behavior. Reconcile fresh main only after the existing admission and
-owner-recovery gates permit delivery. Retain Task26's vfpy, skipped-large-file,
-flow-cap and UNKNOWN pytest-discovery limits and every prior backlog/hold.
-
-## Guarded common installer: remaining qualification
-
-Independently review the canonical 1.0.11 template propagation and static oracle
-updates. After explicit admission, qualify the complete consumer cohort and
-ordinary hook/CI/artifact gates in a full checkout. Current sparse static checks
-do not qualify runtime, installation or native behavior. Consumer execution,
-owner recovery and delivery remain held; retain existing backlog and pauses.
-
-
 ## Functional work order — 2026-11-14
 
 Prioritize usable UFO feature editing and batch-recipe interchange while preserving exact source text and input/output refusal rules. Keep Fontport data adapters separate from App UI and reconcile Fly, App and Scriptmix consumers with the same provider behavior.
 
 Use small smoke checks and focused regressions for changed behavior and package boundaries. Keep the existing detailed acceptance tasks for a later testing pass; mandatory delivery hooks and current holds remain in force.
-
-## Shared installer: remaining delivery qualification — 2026-11-15
-
-Review the exact shared-installer candidate against fresh main, run the required combined package gates, and qualify genuine release/archive/download inputs. Preserve the existing package-specific dependency and distribution contracts. Then qualify the coherent provider/consumer and Script/Extension cohort through the admitted root installer and native lane; source checks do not establish those outcomes. Keep every existing ownership, native, publication and paused-work limit.
-
-
-
-## Shared installer release qualification
-
-The reviewed shared installer source is on main at `517a7e06626dc49f93f2a9ab6767d0a23f127d00`;
-controller delivery and exact-commit CI passed. Independently review and deliver
-the sdist input fix, then qualify the actual release payload before v1.2.10.
-Retain the release, complete cohort propagation, root-installer observation,
-actual installed providers and native acceptance gates. Resolve the separate
-false-marker sibling staging defect in the shared reference before propagating
-its next increment. Source and archive parity do not establish installation or
-native acceptance.
 
 ## Issue 255 remaining native acceptance
 
