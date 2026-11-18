@@ -2,6 +2,15 @@
 this_file: WORK.md
 ---
 
+## 2026-11-18 — Issue 271 generated installer candidate
+
+Regenerated `install.vfpy` with Instamix 1.0.18, preserving project declarations and
+runtime source. Exact reviewed-template byte parity and import-sentinel/wheel-order smoke checks pass. Existing focused installer tests pass (exit 0, 0.74 seconds).
+Task-owned graph impact/change analysis cannot resolve an index; structural caller
+checks supplement this unavailable evidence. Full repository delivery gates,
+independent cohort review and native qualification remain pending. No owner install ran.
+
+
 ## 2026-11-17 — Guarded installer final source gate (Task40)
 
 The unchanged complete hook passes on arm64 Python 3.11: 5,150 Fontport tests,
