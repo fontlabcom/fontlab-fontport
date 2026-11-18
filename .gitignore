@@ -231,3 +231,11 @@ __marimo__/
 verification/issue-105/native-output/
 verification/issue-105/native-runs/
 *.vfpyc
+
+# Python and macOS (pypitrust)
+*.py[cod]
+.venv/
+
+# Python and macOS (pypitrust)
+__version__.py
+_version.py
