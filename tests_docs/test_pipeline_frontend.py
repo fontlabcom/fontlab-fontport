@@ -64,7 +64,8 @@ class FrontendPayloadTests(unittest.TestCase):
                 self.assertIn(notice['path'], page)
                 if row['name'] in ('select', 'good-listener', 'delegate'):
                     self.assertEqual(data.decode().strip(), '## License\n\n[MIT License](http://zenorocha.mit-license.org/) © Zeno Rocha')
-        self.assertEqual(count, 25)
+        self.assertIn('fly-january', names)
+        self.assertEqual(count, 26)
 
     def test_current_source_map_identities_and_exact_embedded_sources_are_retained(self):
         record = json.loads((ROOT / 'src_docs/md/assets/current-frontend-notices.json').read_text())
@@ -98,7 +99,8 @@ class FrontendPayloadTests(unittest.TestCase):
         observed = set()
         for path in (ROOT / 'docs').rglob('*.html'):
             observed.update(icon_paths(path.read_text()))
-        css = '\n'.join(path.read_text() for path in (ROOT / 'docs/assets/stylesheets').glob('*.css'))
+        css = '\n'.join(path.read_text() for folder in ('stylesheets', 'fly')
+                        for path in (ROOT / 'docs/assets' / folder).glob('*.css'))
         for svg in re.findall(r'<svg\b.*?</svg>', unquote(css), re.S):
             observed.update(icon_paths(svg))
         self.assertTrue(observed)
@@ -116,6 +118,7 @@ class FrontendPayloadTests(unittest.TestCase):
             optimized.update(icon_paths(unquote(values[0])))
         self.assertEqual(observed - installed, optimized)
         caret = scope['css_header_attributions']['--md-version-icon']
+        self.assertEqual(hashlib.sha256((ROOT / 'docs' / caret['asset']).read_bytes()).hexdigest(), caret['asset_sha256'])
         values = re.findall(r"--md-version-icon:url\('data:image/svg\+xml;charset=utf-8,(.*?)'\)", css)
         self.assertEqual(len(values), 1)
         svg = unquote(values[0])

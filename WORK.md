@@ -2,6 +2,18 @@
 this_file: WORK.md
 ---
 
+## 2026-11-23 — Fontport documentation theme
+
+Rebuilt `docs/` with fly-january 0.1.1 and FontLab chrome. Two strict builds
+from the 33-package Python 3.13 lock produced the same 65 files. All 37
+documentation tests passed. All 17 HTML files, including the 404 page, load
+the Fly assets and contain one Fontport menu and one FontLab footer.
+
+The arm64 Python 3.11 suite passed with the repository's matching Instamix
+1.0.15 installer fixture (5,151 passed, one skipped, 63 warnings). Without
+that fixture, a newer sibling installer failed the byte-parity test. Browser
+verification belongs to the rollout orchestrator.
+
 ## 2026-11-17 — Guarded installer final source gate (Task40)
 
 The unchanged complete hook passes on arm64 Python 3.11: 5,150 Fontport tests,

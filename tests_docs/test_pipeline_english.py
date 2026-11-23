@@ -1,11 +1,14 @@
 # this_file: tests_docs/test_pipeline_english.py
 """English-only output must reject configuration, reference and vendor drift."""
+import hashlib
 import importlib.metadata
 import json
 from pathlib import Path
 import tempfile
 from types import SimpleNamespace
 import unittest
+
+from fly_january.assets import rescale_materialx
 
 from src_docs import english_search
 
@@ -21,10 +24,14 @@ class EnglishSearchTests(unittest.TestCase):
         self.inventory = {'generated_vendor_assets': policy['omitted'] + policy['retained']}
         for row in self.inventory['generated_vendor_assets']:
             source = row['installed_distribution_sources'][0]
-            data = importlib.metadata.distribution(source['distribution']).locate_file(source['path']).read_bytes()
+            distribution = importlib.metadata.distribution(source['distribution'])
+            self.assertEqual(distribution.version, source['version'])
+            data = distribution.locate_file(source['path']).read_bytes()
+            self.assertEqual(hashlib.sha256(data).hexdigest(), source.get('sha256', row['sha256']))
             target = self.site / row['path']
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(data)
+        rescale_materialx(self.site)
         (self.site / 'search').mkdir()
         self.index = {'config': {'lang': ['en']}, 'docs': [{'location': 'index.html', 'title': 'Glyph tools', 'text': 'Meaningful complete search fixture'}]}
         (self.site / 'search/search_index.json').write_text(json.dumps(self.index))
@@ -62,7 +69,8 @@ class EnglishSearchTests(unittest.TestCase):
             english_search.on_post_build(self.config)
 
     def test_changed_helper_or_retained_vendor_bytes_are_rejected_before_deletion(self):
-        for path in ['assets/javascripts/lunr/wordcut.js', 'assets/javascripts/bundle.fc193f93.min.js']:
+        for path in ['assets/javascripts/lunr/wordcut.js', 'assets/javascripts/bundle.fc193f93.min.js',
+                     'assets/fly/fly.css', 'assets/stylesheets/main.314bbef5.min.css']:
             with self.subTest(path=path):
                 target = self.site / path
                 before = target.read_bytes()
@@ -98,7 +106,8 @@ class EnglishSearchTests(unittest.TestCase):
         import properdocs.replacement
         from properdocs.config import load_config
         config = load_config(str(ROOT / 'src_docs/mkdocs.yml'))
-        self.assertIs(english_search.on_config(config), config)
+        self.assertIs(config.plugins.on_config(config), config)
+        self.assertIs(config.plugins['fly-january/search'], config.plugins['materialx/search'])
         self.assertEqual(config['plugins']['materialx/search'].config['lang'], ['en'])
 
     def test_manifest_count_or_helper_boundary_drift_is_rejected(self):

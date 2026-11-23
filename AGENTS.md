@@ -122,7 +122,7 @@ installing into its user folder or publishing a site.
 
 ## Source/build-only documentation
 
-Authored public guides live in `src_docs/md/guides`; five core pages provide website navigation. Use the separate 31-package hash-locked Python 3.13 documentation environment and `sh src_docs/build.sh`; run `python -m unittest discover -s tests_docs -v`. Generated `docs` is immutable output. The every-main workflow verifies source/output lineage, a shared source epoch and complete tracked plus ignored/untracked parity. All twelve private P/L holds remain; no Pages grant, helper or request belongs here. Preserve native/owner-install gates.
+Authored public guides live in `src_docs/md/guides`; five core pages provide website navigation. The site uses fly-january 0.1.1 with FontLab chrome. Install `src_docs/requirements.txt` with `--require-hashes` in the separate Python 3.13 environment. Run `sh src_docs/build.sh` and `python -m unittest discover -s tests_docs -v`. Generated `docs` is immutable output. The every-main workflow verifies source/output lineage, a shared source epoch and complete tracked plus ignored/untracked parity. All twelve private P/L holds remain; no Pages grant, helper or request belongs here. Preserve native/owner-install gates.
 
 ## Integration rounds
 
