@@ -4,6 +4,7 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- The documentation build now accepts fly-january 0.3.0 or later and locks 0.3.0 for reproducible builds.
 - Site now uses the fly-january 0.2.1 theme (chrome: fontlab).
 - PyPI owner configuration: keep the trusted publisher for `fontlab-fontport` set to GitHub repository `fontlabcom/fontlab-fontport`, workflow `release.yml`, environment `pypi`. Both v1.2.18 distributions carry this publisher identity. [Release run 44411658072](https://github.com/fontlabcom/fontlab-fontport/actions/runs/44411658072).
 - Issue 271 release and archive checks passed for `862f8c8` (v1.2.18). The PyPI wheel and sdist match the GitHub release hashes, and the sdist contains the reviewed Instamix 1.0.18 installer byte for byte. [Release artifacts](https://github.com/fontlabcom/fontlab-fontport/releases/tag/v1.2.18).
