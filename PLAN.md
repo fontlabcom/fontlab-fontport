@@ -2,111 +2,51 @@
 this_file: PLAN.md
 ---
 
-## Issue 271 installer qualification
+# Remaining work
 
-Integrate the independently reviewed generated installer through existing full
-repository/hook gates; verify exact-SHA CI and archives, then qualify native
-macOS/Windows use when the serialized guard is available. Preserve owner files.
+Start with user-visible UFO feature and batch-recipe behavior across Fontport, App and Scriptmix. Check affected providers and consumers together. Keep FontParts, DesignSpace and UFO adapters in Fontport, UI and script helpers in App, and Glyphs compatibility in Glyport. Preserve upstream object identities, complete inputs and exact feature source. App consumers use the public `capabilities()` and `invalidate()` interfaces. Menu lookup and failed synchronization belong in App. The affine and UFO routes do not promise arbitrary interpolation or stem preservation.
 
+Use focused checks during implementation. Keep source review, ordinary installed artifacts, released consumer behavior, native history and publication as separate results. Use the arm64 Python 3.11 checks in README, the existing 80% changed-module gate and the normal delivery hooks. Static, variable and non-Latin fixtures cover different native failure modes. Record installed versions and import origins and keep private fixture data out of upstream reports.
 
-## Functional work order — 2026-11-14
+## Features and batch recipes
 
-Prioritize usable UFO feature editing and batch-recipe interchange while preserving exact source text and input/output refusal rules. Keep Fontport data adapters separate from App UI and reconcile Fly, App and Scriptmix consumers with the same provider behavior.
+- Reconcile UFO feature source and batch-recipe behavior across the three packages. Qualify the exact feature-source integration from matching artifacts through native history and saved/reopened files. Literal U+2029 editing needs its own successful round trip.
+- For workflow 17 P2, finish post-change graph analysis, controller and ledger review, commit-bound strict docs, reviewed main integration and exact-commit CI/output lineage. Preserve recipe-only No Font operation, explicit external Python selection, case/Unicode containment and no-overwrite checks. Keep complete inputs and independently verify reopened geometry and resources.
+- Test matching P2 archives in two fresh prefixes, then exercise the actual consumer, history, Undo/Redo and reopen. Check separate editor and panel close acknowledgements, terminal child/stdout/scratch cleanup, active-window isolation, dispatch/scheduling retries, the existing read budget and the first-EAGAIN stop without losing the next poll's data. Eight of the minimum eighteen workflows have source qualification. The ledger records zero workflows at full parity and retains all 8,723 obligations.
 
-Use small smoke checks and focused regressions for changed behavior and package boundaries. Keep the existing detailed acceptance tasks for a later testing pass; mandatory delivery hooks and current holds remain in force.
+## Releases and installed consumers
 
-## Issue 255 remaining native acceptance
+- Issue 271 still needs confirmation of the independent cohort review and required hooks, followed by serialized macOS/Windows installer checks. Preserve owner files through conflicts and partial failure.
+- Issue 254 needs the installed Pens floor checked on every supported Instamix route, including a stale sibling checkout and fallback without uv. Verify that compatible Pens supplies `FONTGATE_NODE_TYPES` and an older installation cannot silently satisfy `fontlab-python-pens>=1.0.0`.
+- With the released Fontport installed in FontLab 9, compare `glyph_summaries` Unicode values from layer targets with the package values and measure TMetrics typing on the same font.
+- Issue 255 needs explicit D43 recovery and admission for released FontLab checks. Install matching Fly >=1.3 separately. Exercise generated startup recipes, all three Scripts report windows and the original UFO/UI/history/reopen workflows. Preserve open documents.
+- The existing lock selects the sibling editable App and the declared floor is 1.2.0. Confirm the reviewed App release and the owner’s intended lock source before refreshing the optional integration metadata.
+- Qualify the lint repair and portability/licence changes against whole-current-App behavior, default resolution and genuine final wheel/sdist cohorts. Inspect payloads, licences and privacy, install into clean prefixes, and run extracted tests. Preserve default editing/save behavior and opt-in strict history/persistence.
 
-After explicit D43 recovery and admission, qualify released Fly/Fontport Scripts, generated startup recipes and original native UFO/UI/history/save-reopen workflows with exact installed paths and provider identities. Source, genuine artifact, ordinary external-install and release/download qualification for v1.2.9 is recorded in CHANGELOG. Existing private Pages and Issue 123 holds remain. Consumer setup still requires separately installing matching Fly >=1.3 in the same interpreter. Provider source installers do not automatically supply or enforce this prerequisite; no reverse mandatory Fly dependency is claimed.
+## Native adapters and object lifetime
 
-## Lint-repair remaining tuple and artifact qualification
+Issue 123 remains paused. Keep Issue 207 candidate reconciliation separate from canonical adoption. Issue 210 describes the future plugin split, Issue 211 retains follow-ups, and Issue 214 is the preparation catalogue. All private Pages holds remain in force.
 
-Qualify whole-current-App behavior, default dependency resolution and genuine final ordinary distributions for the delivered lint-repair source. Preserve earlier current-Pens/historical-App tuple limits separately from the real hook's current-App dependency-boundary result, and retain every native/adoption/publication task below.
+- Reconcile Issue 207 with the current DesignSpace/UFO/fontParts boundary and preserve host data and origin guards. Qualify object lifetime, full-font history, failure paths and saved/reopened data through matching installed consumers.
+- F1 I1 needs native duplicate-owner checks in both orders using stored `fgFont.keys()` names. Measure whole-font enumeration cost before changing repeated lookups. Verify registered-record Unicode writes on noncurrent fonts through no-op, refusal, Apply, Undo, Redo and reopen, preserving native-global notes, lib and unrelated fields.
+- Check the shared canvas-history guard for glyph and auxiliary-layer writes and new glyph creation. Compare complete font/history snapshots for Font-window, canvas-owner, wrong-package, unreadable and off-thread cases. Package metadata/groups/features and detached transfer have separate ownership.
+- Qualify all six App editor factories in FontLab, including apply/cancel, callbacks, refresh, close, deferred teardown and group/kerning sequence placement. Exercise active-font feature I/O with stale sources, inactive fonts and missing references, then verify master restoration and VFJ reopen.
+- Qualify world registration, open/new/current/close ownership, refresh, selection/events and actual dirty/source-path semantics after save. Exercise affine preview, native axes and axis maps, batch cancellation/UI scheduling and reopened outputs.
+- Recheck the documented live FontParts capabilities against the [1,797-row coverage ledger](src_docs/md/guides/FONTPARTS-COVERAGE.md). Preserve both classification columns, exact reproducers and the three fixture families for changed or unresolved behavior.
 
-## Batch recipe workbench consumer qualification
+## Geometry and resources
 
-For #17 P2, complete the post-change graph, ledger review and separate source
-qualification gates before recording the workflow. Refresh actual upstream main,
-reconcile any intervening changes without losing teammate work, and review the
-exact staged delta. Create genuine source commits, qualify commit-bound strict
-documentation builds and required tests, then use the normal qualified pre-push
-gate and verify each exact main commit's CI and generated-output lineage.
-Retain the recipe-only No Font behavior, explicit external Python selection,
-independent reopened whole-font geometry/resource oracles, complete unchanged
-inputs, and delivered P1 case/Unicode containment and no-overwrite regressions.
-Retain distinct editor _close_complete and panel _batch_close["complete"] ACKs;
-require actual terminal child/stdout/scratch cleanup beyond supervision transfer.
-Keep the unchanged READ_BYTES budget, first-EAGAIN stop and next-poll no-loss
-controls, active-window isolation and dispatch/scheduling retry regressions.
-Qualify #17's matching ordinary artifacts, two fresh prefixes and complete
-archives, then its actual consumer/native/history/Undo/Redo/reopen checks.
-Separately retain the wider literal-U+2029 feature-editing qualification,
-canonical adoption, publication and private Pages holds; these are not added
-recipe-workbench features. Until the separate controller qualification, retain
-source floor eight, full parity zero, all 8,723 obligations and the minimum
-eighteen workflows.
+- Issue 241 needs the TGlyph several-shape contour edit on an owned font. Check the supported unshared, untransformed contour shape, its neighboring shapes, whether the edit creates exactly one Undo row, Undo/Redo and VFJ reopen. Before widening refusals, check transformed shapes/layers in layer coordinates, every glyph sharing a shape, contours split across shapes or added without a contour shape, and component identity/transform on combined edits. Compare shape count, order, names, flags, notes and unrelated layer data. Check fractional anchors at 10.5/20.25 and hinted outlines with TrueType data through reopen.
+- Recheck fractional pen writes after a fix for fontlab/fl#8638 or a change to direct node positioning. Switch between fonts with Round coordinates on and off and read the seeded coordinates back. Repeat the r31 native Redo comparison with the existing 1e-3 tolerance, including a genuine 0.1 difference.
+- Independently qualify the isolated Task6c staged PNG/color transaction on current source and full-font packages/zips. Check faults, rollback, stale sources, handle lifetime, and native/no-resource writer limits. Complete ImageSet/DataSet collections and native resource parity, including resource loss in a parentless glyph copy.
+- Qualify native multilayer, guideline and image interchange and detached orphans. Compare reopened outlines, node types, references and metrics. Document reviewed exclusions and file a privacy-safe FontLab issue for a reproduced upstream defect.
 
-## Exact feature source continuation
+## Metadata, groups and kerning
 
-Qualify matching ordinary artifacts and owned native/history/reopen checks for the source-qualified combined-main exact UFO feature-source integration; full literal paragraph-separator editing remains separate.
+- Issue 250 N3 needs a reliable signal or conservative refusal after Undo followed by an unrecorded edit clears Redo. Check the missing stem-snap history row on FontLab 9809. After fontlab/fl#8633 is fixed, verify active, inactive and dirty documents through Undo/Redo before relaxing the guard.
+- Compare D18-2's eight read-only vertical metrics with Font Info and decide whether to support export or writes. Verify integral `unitsPerEm` readback in the live host. Check optional metric clearing, changing name records, key-master fields and exact one-row metadata history.
+- Check the printable-ASCII group-name limit, divergent both-sided classes, dependent-pair validation and global group loss across VFJ save/reopen. Keep explicit zero kerning distinct from absence.
+- Verify installed kerning/editor integration and per-master write/history limits (fontlab/fl#8639 and fontlab/fl#8640). With Light current in a fresh Plum copy, check that the editor names Regular as the default target. Inspect noncurrent-master writes through Undo/Redo/reopen and preserve fractional values on every master before widening support.
+- Qualify structured native feature and JSON-compatible packageLib writes through history and persistence. Retain lossless-source requirements and the arbitrary-text and binary/date refusals.
 
-# Forward plan
-
-## Staged-image qualification and remaining resource parity
-
-Qualify the isolated Task6c candidate with current source/ordinary full-font
-package/zip proofs and independent review. Keep ended-stage/source-conflict and
-native/no-resource writer limits explicit. Complete full ImageSet/DataSet and
-native resource parity separately; the inherited parentless glyph.copy resource
-loss remains a named fullTask6 obligation.
-
-For a reproduced FontLab upstream gap, file or extend an evidence-backed [fl issue](https://github.com/fontlab/fl/issues/) and link any required fix PR in [Proteus](https://github.com/Fontlab/Proteus) (application), [FontGate](https://github.com/Fontlab/FontGate) (core), or [pyfontgate](https://github.com/Fontlab/pyfontgate) (Python bindings), according to the proven cause. Keep private data out of the reproducer; a pending capability or an offline refusal alone does not establish an upstream defect.
-
-Issue 123 implementation remains paused; its acceptance backlog below is preserved, not resumed. Keep qualified Issue 207 candidates distinct from canonical source, ordinary installed artifacts, native acceptance and publication. Issue 210 defines the future plugin split; Issue 211 retains follow-up checks. The owner corrected the preparation catalogue reference to Issue 214.
-
-## Provider boundary and current corpus
-
-Keep FontParts/UFO access and upstream identities here. Keep FontLab UI/script helpers in App and Glyphs.app compatibility in Glyport. The Issue 205 UI ownership reversal is historical source work; native/cohort/release qualification remains separate.
-
-The old `testdata/getgo` path is absent. Verify all current 99 VFJ manifest hashes before/after read-only feature checks under `lessons/src/fontlab_python_lessons/getgo/data`. Repair test discovery for that layout, retain the current corpus revision and never write the reference corpus or infer native acceptance from feature reads.
-
-## Canvas and native identity
-
-Qualify shared `require_history_scope` for glyph/auxiliary-layer writes and `creates=True` for new identities. Compare complete owned fonts/history after Font-window, canvas-owner, other-package, unreadable and off-thread refusals. Package metadata/groups/features and detached transfer have separate scope.
-
-Qualify duplicate owner-name refusal in both orders using `fgFont.keys()`. Preserve stored-name enumeration without export/deduplication. Measure whole-font timing: each lookup is O(n), whole reads can be O(n²); no cache is promised. Qualify the registered font-owned Unicode route without destructive `flGlyph.fgGlyph` export, including fresh note/lib payloads, noncurrent fonts, no-op, refusal, Apply/Undo/Redo/reopen. Earlier raw-route diagnostics do not qualify the repaired installed path.
-
-Use owned static, variable and non-Latin fixtures. Verify exact import origins. Coordinate all six App-restored editors: open/apply/cancel/callbacks/refresh/close/deferred teardown, groups/kerning/sequence placement, feature stale-source/missing-reference refusal, master restoration and saved source. Qt mocks and AST parity do not prove this behavior.
-
-## Native data and interchange
-
-- Geometry: qualify complete components, anchors, guidelines/layers while preserving other layers, hints, raw flags, notes and unrelated data. Keep unsupported hinted-outline/component replacement refusals.
-- Issue 241 several-shape writes: source tests prove a contours-only edit on a layer with several shapes rewrites only the single untransformed, unshared, non-image contour shape (copy-on-write) and leaves every other shape untouched. These stay refused with named errors until an owner smoke step proves them on an owned fixture: (1) a transformed contour shape or transformed layer: edit its contours, Apply, compare the reread outline with the requested outline in layer coordinates, then Undo/Redo and save/reopen; (2) a shared contour shape (`referenceCount>1`): edit through one glyph, check every glyph that shares it, then Undo/Redo; (3) contours spread over several shapes, or added where no shape holds contours: edit, Apply, and confirm shape count, order, names, raw flags and notes survive Undo/Redo and reopen; (4) components changed together with contours on a several-shape layer: edit both, check component identity and transform, then Undo/Redo; (5) fractional anchors: write 10.5/20.25 anchors and compare native readback before and after save/reopen; (6) hinted layers: edit an outline on a hinted owned layer and compare hints and TrueType data after Apply/Undo/reopen. Native acceptance of the widened case itself also needs that smoke step: edit one several-shape glyph in TGlyph, Apply, then check the other shapes, one Undo row and save/reopen.
-- Metadata: qualify structured key-master/optional metrics, one-row history, clearing unset values and persistent changing names.
-- Groups/kerning: resolve printable-ASCII limits, divergent both-sided classes, font-global group loss on VFJ save, dependent-pair validation and fractional Redo (float32 read-back, compare with 1e-3, App's measured tolerance) and pen rounding (fontlab/fl#8638). Keep explicit zero distinct from absence; never silently round FontParts values.
-- Features/lib: qualify structured writes, JSON-compatible packageLib history/persistence. Arbitrary text splitting and binary/date writes stay unavailable without a lossless route.
-- UFO: qualify multilayer/guidelines/images/detached orphans or retain reviewed exclusions. Compare reopened geometry, node types, references and metrics.
-
-Preserve both native classification columns for all 1,797 upstream tests in [the coverage report](src_docs/md/guides/FONTPARTS-COVERAGE.md). Recheck changed/unresolved routes with exact reproducers and all three fixture families.
-
-## Integration and release
-
-Use public `capabilities()`/`invalidate()` in App. Preserve default editing/save behavior; strict history/persistence remains opt-in. Qualify world registration, open/new/current/close ownership, refresh, selection/events and actual save-state/source-path semantics separately from copy-writing save. Qualify affine preview, child cancellation and reopened batch output, actual source/instance axes, axis maps and UI scheduling. Do not promise arbitrary interpolation/stem preservation. Generic menu-lookup/failing-sync follow-ups belong in App; shared interface polling was skipped by its design condition, not left as a Fontport phase.
-
-Select a reviewed genuine App release/floor and resolve the owner's lock-source choice before relocking. Source/artifact success does not update `uv.lock`. Audit wheel/sdist privacy/licences, independent installs/extracted tests and installed native behavior. Host installation remains owner-managed.
-
-## Development checks
-
-Use the explicit arm64 Python 3.11 `fontport_check` recipe in README, with a matching App checkout. `./test.sh` accepts `FONTLABAPP_DIR`, otherwise uses sibling App, and runs pytest with defcon, fontParts, fontPens, fontTools and ufoLib2.
-
-## Review, integration and cleanup
-
-Use the detailed open tasks in [TODO.md](TODO.md) as the acceptance checklist. Complete one scoped MVP, then run the exact repository checks and unchanged 80% gate for each complete changed production module. Keep source, genuine artifacts, ordinary origins and native behavior separate. Obtain independent review before a milestone commit/push and verify the actual remote head. Reconcile concurrent source and all callers before main integration. Preserve recovery/unique work and fresh owner/worktree attachments before obsolete branch/file cleanup. Update TODO/PLAN and record only scoped verified results in CHANGELOG. Do not drive the owner's FontLab, install into its user folder or publish a site from this proposal.
-
-## Private documentation delivery gates
-
-Independently review the complete authored catalogue and source-only patch, including deletion of old authored docs paths. Commit the reviewed source X through normal gates, rebuild at its actual epoch, review generated Y and verify both actual main Actions jobs and immutable lineage. Preserve native/owner-install gates. Private Pages configuration, requests and publication remain owner-held.
-
-## Scripts demo qualification
-
-Qualify the three categorized demos' nonmodal report windows in an owned FontLab session after source review. Keep offline package results distinct from installed native UI behavior; no runtime mutation or installation is part of adding these demos.
+Once a milestone is integrated, check current branch/worktree attachments and retain unique, recoverable work before removing anything obsolete. See [TODO.md](TODO.md) for individual checks.

@@ -5,6 +5,11 @@ this_file: CHANGELOG.md
 ## Unreleased
 
 - Site now uses the fly-january 0.2.1 theme (chrome: fontlab).
+- PyPI owner configuration: keep the trusted publisher for `fontlab-fontport` set to GitHub repository `fontlabcom/fontlab-fontport`, workflow `release.yml`, environment `pypi`. Both v1.2.18 distributions carry this publisher identity. [Release run 44411658072](https://github.com/fontlabcom/fontlab-fontport/actions/runs/44411658072).
+- Issue 271 release and archive checks passed for `862f8c8` (v1.2.18). The PyPI wheel and sdist match the GitHub release hashes, and the sdist contains the reviewed Instamix 1.0.18 installer byte for byte. [Release artifacts](https://github.com/fontlabcom/fontlab-fontport/releases/tag/v1.2.18).
+- Closed the catalogue source and generated-site checks. Reviewed source `0a40367d` passed 36 documentation tests, and its docs-only successor `eba61e03` matched all 60 generated files. Main later passed both lineage and output parity on `862f8c8`. [Documentation run 44411203454](https://github.com/fontlabcom/fontlab-fontport/actions/runs/44411203454).
+- Closed the GetGo discovery check. All nine offline discovery and corpus cases passed against the packaged layout, and all 99 VFJs retained their manifest hashes at corpus revision `cf1319fa`.
+- Closed the first-party licence wording audit. `pyproject.toml`, LICENSE and README identify Apache 2.0. NOTICE attributes the original BSD-3-Clause code and records the copyright owner's relicensing.
 
 ## 2026-11-18 — Issue 271 installer source alignment
 
