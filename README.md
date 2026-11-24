@@ -27,7 +27,7 @@ Qualify native object lifetime, full-font history, Undo/Redo, failure paths and 
 
 Use the explicit arm64 Python 3.11 `fontport_check` recipe in README, with a matching App checkout. `./test.sh` accepts `FONTLABAPP_DIR`, otherwise uses sibling App, and runs pytest with defcon, fontParts, fontPens, fontTools and ufoLib2.
 
-The docs use fly-january 0.3.0 or later for the FontLab menu and footer. Run these commands from the repository root to rebuild `docs/` with the locked Python 3.13 environment.
+The docs use fly-january 0.4.0 or later (remote theme assets) for the FontLab menu and footer. Run these commands from the repository root to rebuild `docs/` with the locked Python 3.13 environment.
 
 ```sh
 uv venv --python 3.13 .docs-venv

@@ -125,4 +125,4 @@ legacy project overrides; normal dependency metadata still governs resolution.
 
 ## Documentation build
 
-The separate Python 3.13 docs environment uses `src_docs/requirements.txt`. The source requires fly-january 0.3.0 or later. The lock records exact versions and hashes for the theme, ProperDocs 1.6.7, MkDocs 1.6.1, MaterialX 10.1.8 and PyMdown 11.0.1. The Fly plugin supplies FontLab chrome and connects the site's English search to MaterialX. Host and ordinary artifact checks explicitly select arm64 CPython 3.11 and assert the actual architecture.
+The separate Python 3.13 docs environment uses `src_docs/requirements.txt`. The source requires fly-january 0.4.0 or later (remote theme assets). The lock records exact versions and hashes for the theme, ProperDocs 1.6.7, MkDocs 1.6.1, MaterialX 10.1.8 and PyMdown 11.0.1. The Fly plugin supplies FontLab chrome and connects the site's English search to MaterialX. Host and ordinary artifact checks explicitly select arm64 CPython 3.11 and assert the actual architecture.

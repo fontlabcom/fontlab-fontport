@@ -70,7 +70,7 @@ class EnglishSearchTests(unittest.TestCase):
 
     def test_changed_helper_or_retained_vendor_bytes_are_rejected_before_deletion(self):
         for path in ['assets/javascripts/lunr/wordcut.js', 'assets/javascripts/bundle.fc193f93.min.js',
-                     'assets/fly/fly.css', 'assets/stylesheets/main.314bbef5.min.css']:
+                     'assets/stylesheets/main.314bbef5.min.css']:
             with self.subTest(path=path):
                 target = self.site / path
                 before = target.read_bytes()
@@ -107,7 +107,7 @@ class EnglishSearchTests(unittest.TestCase):
         from properdocs.config import load_config
         config = load_config(str(ROOT / 'src_docs/mkdocs.yml'))
         self.assertIs(config.plugins.on_config(config), config)
-        self.assertIs(config.plugins['fly-january/search'], config.plugins['materialx/search'])
+        self.assertIs(config.plugins['fly-january-remote/search'], config.plugins['materialx/search'])
         self.assertEqual(config['plugins']['materialx/search'].config['lang'], ['en'])
 
     def test_manifest_count_or_helper_boundary_drift_is_rejected(self):

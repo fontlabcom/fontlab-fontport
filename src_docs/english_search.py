@@ -16,7 +16,7 @@ def on_config(config):
 
 def verify_assets(site: Path, policy: dict) -> None:
     """Bind both the omitted and retained payload before removing any files."""
-    if len(policy['omitted']) != 35 or len(policy['retained']) != 14:
+    if len(policy['omitted']) != 35 or len(policy['retained']) != 9:
         raise ValueError('English omission manifest must bind 35 helpers and 14 site assets')
     if any('/lunr/' not in row['path'] for row in policy['omitted']) or any('/lunr/' in row['path'] for row in policy['retained']):
         raise ValueError('English omission manifest changed its helper boundary')

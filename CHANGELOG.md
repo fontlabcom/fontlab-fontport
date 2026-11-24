@@ -4,6 +4,7 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- The documentation uses fly-january 0.4.0 or later (remote theme assets).
 - The documentation build now accepts fly-january 0.3.0 or later and locks 0.3.0 for reproducible builds.
 - Site now uses the fly-january 0.2.1 theme (chrome: fontlab).
 - PyPI owner configuration: keep the trusted publisher for `fontlab-fontport` set to GitHub repository `fontlabcom/fontlab-fontport`, workflow `release.yml`, environment `pypi`. Both v1.2.18 distributions carry this publisher identity. [Release run 44411658072](https://github.com/fontlabcom/fontlab-fontport/actions/runs/44411658072).

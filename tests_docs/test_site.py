@@ -67,7 +67,7 @@ class SiteTests(unittest.TestCase):
                 self.assertEqual(menus[0].get('mobile-menu'), 'materialx')
                 self.assertEqual(sum(tag == 'fontlab-footer' for tag, _ in page.tags), 1)
                 for name in ('fly.css', 'fly.js', 'fly-bridge.js'):
-                    self.assertTrue(any(urlsplit(link).path.endswith('assets/fly/' + name) for link in page.links), name)
+                    self.assertIn('https://fontlab.dev/fontlab-www-docstheme/fly/latest/' + name, page.links)
                 search = [attrs for tag, attrs in page.tags if attrs.get('data-md-component') == 'search-query']
                 self.assertEqual(len(search), 1)
                 canonical = [attrs['href'] for tag, attrs in page.tags if attrs.get('rel') == 'canonical']
