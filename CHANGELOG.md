@@ -4,7 +4,7 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
-- Site now uses the fly-january 0.1.1 theme (chrome: fontlab).
+- Site now uses the fly-january 0.2.1 theme (chrome: fontlab).
 
 ## 2026-11-17 — Installer stub from instamix 1.0.15 (Issue 259 follow-ups)
 

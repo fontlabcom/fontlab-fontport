@@ -2,6 +2,13 @@
 this_file: WORK.md
 ---
 
+## 2026-11-24 — Fontport documentation theme update
+
+Rebuilt `docs/` with fly-january 0.2.1 and updated the active asset hashes and
+wheel provenance. The strict build completed without warnings. All 37
+documentation tests passed. The arm64 runtime suite passed with the matching
+Instamix 1.0.15 fixture (5,151 passed, one skipped, 63 warnings).
+
 ## 2026-11-23 — Fontport documentation theme
 
 Rebuilt `docs/` with fly-january 0.1.1 and FontLab chrome. Two strict builds
