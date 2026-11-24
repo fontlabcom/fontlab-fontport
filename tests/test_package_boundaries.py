@@ -12,7 +12,7 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
-STUB_SHA256 = "52752283d8a1f8242f7701337ce7c52ab96c593ea90b2a28229830aa7ff6b7de"
+STUB_SHA256 = "3b8428286c2e76ff20db208b7bf498cb6a34c9e68aa5d6828d9e4c034ec5ad18"
 
 
 def canonical_stub() -> bytes | None:

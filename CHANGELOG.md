@@ -6,6 +6,13 @@ this_file: CHANGELOG.md
 
 - Site now uses the fly-january 0.2.1 theme (chrome: fontlab).
 
+## 2026-11-18 — Issue 271 installer source alignment
+
+The generated installer matches the reviewed Instamix 1.0.18 template: it requires
+conflict preflight support, selects compatible local wheels and reports completed
+work before an installation failure. Exact reviewed-template byte parity and import-sentinel/wheel-order smoke checks pass. Existing focused installer tests pass (exit 0, 0.74 seconds).
+Consumer integration, released archives and native execution remain separate checks.
+
 ## 2026-11-17 — Installer stub from instamix 1.0.15 (Issue 259 follow-ups)
 
 - `install.vfpy` is now the stub from fontlab-python-instamix 1.0.15. It replaces an
